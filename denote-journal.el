@@ -37,7 +37,9 @@
   "Convenience functions for daily journaling with Denote."
   :group 'denote
   :link '(info-link "(denote) Top")
-  :link '(url-link :tag "Homepage" "https://protesilaos.com/emacs/denote"))
+  :link '(info-link "(denote-journal) Top")
+  :link '(url-link :tag "Denote homepage" "https://protesilaos.com/emacs/denote")
+  :link '(url-link :tag "Denote Journal homepage" "https://protesilaos.com/emacs/denote-journal"))
 
 (defcustom denote-journal-directory
   (expand-file-name "journal" denote-directory)
@@ -198,12 +200,8 @@ DATE has the same format as that returned by `denote-valid-date-p'."
 (defun denote-journal--entry-today (&optional date)
   "Return list of files matching a journal for today or optional DATE.
 DATE has the same format as that returned by `denote-valid-date-p'."
-  (denote-directory-files (denote-journal--filename-date-regexp date) nil nil nil denote-journal-directory))
-
-(define-obsolete-function-alias
-  'denote-journal-extra-path-to-new-or-existing-entry
-  'denote-journal-path-to-new-or-existing-entry
-  "3.2.0")
+  (let ((denote-directory (file-name-as-directory denote-journal-directory)))
+    (denote-directory-files (denote-journal--filename-date-regexp date))))
 
 ;;;###autoload
 (defun denote-journal-path-to-new-or-existing-entry (&optional date)
