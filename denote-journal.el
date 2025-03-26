@@ -194,13 +194,13 @@ DATE has the same format as that returned by `denote-valid-date-p'."
          (id-index (seq-position order 'identifier))
          (kw-index (seq-position order 'keywords)))
     (if (> kw-index id-index)
-        (format "%s.*?_%s" identifier (denote-journal--keyword-regex))
-      (format "_%s.*?@@%s" (denote-journal--keyword-regex) identifier))))
+        (format "%s.*?%s" identifier (denote-journal--keyword-regex))
+      (format "%s.*?@@%s" (denote-journal--keyword-regex) identifier))))
 
 (defun denote-journal--entry-today (&optional date)
   "Return list of files matching a journal for today or optional DATE.
 DATE has the same format as that returned by `denote-valid-date-p'."
-  (let ((denote-directory (file-name-as-directory denote-journal-directory)))
+  (let ((denote-directory (file-name-as-directory (denote-journal-directory))))
     (denote-directory-files (denote-journal--filename-date-regexp date))))
 
 ;;;###autoload
