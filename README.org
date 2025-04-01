@@ -61,6 +61,85 @@ included in the section entitled “GNU Free Documentation License.”
 modify this GNU manual.”
 #+end_quote
 
+* Installation
+:PROPERTIES:
+:CUSTOM_ID: h:installation
+:END:
+#+cindex: Installation instructions
+
+** GNU ELPA package
+:PROPERTIES:
+:CUSTOM_ID: h:gnu-elpa-package
+:END:
+
+The package is available as =denote-journal=.  Simply do:
+
+: M-x package-refresh-contents
+: M-x package-install
+
+And search for it.
+
+GNU ELPA provides the latest stable release.  Those who prefer to follow
+the development process in order to report bugs or suggest changes, can
+use the version of the package from the GNU-devel ELPA archive.  Read:
+https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/.
+
+** Manual installation
+:PROPERTIES:
+:CUSTOM_ID: h:manual-installation
+:END:
+
+Assuming your Emacs files are found in =~/.emacs.d/=, execute the
+following commands in a shell prompt:
+
+#+begin_src sh
+cd ~/.emacs.d
+
+# Create a directory for manually-installed packages
+mkdir manual-packages
+
+# Go to the new directory
+cd manual-packages
+
+# Clone this repo, naming it "denote-journal"
+git clone https://github.com/protesilaos/denote-journal denote-journal
+#+end_src
+
+Finally, in your =init.el= (or equivalent) evaluate this:
+
+#+begin_src emacs-lisp
+;; Make Elisp files in that directory available to the user.
+(add-to-list 'load-path "~/.emacs.d/manual-packages/denote-journal")
+#+end_src
+
+Everything is in place to set up the package.
+
+* Sample configuration
+:PROPERTIES:
+:CUSTOM_ID: h:sample-configuration
+:END:
+#+cindex: Package configuration
+
+#+begin_src emacs-lisp
+(use-package denote-journal
+  :ensure t
+  ;; Bind those to some key for your convenience.
+  :commands ( denote-journal-new-entry
+              denote-journal-new-or-existing-entry
+              denote-journal-link-or-create-entry )
+  :hook (calendar-mode . denote-journal-calendar-mode)
+  :config
+  ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
+  ;; to nil to use the `denote-directory' instead.
+  (setq denote-journal-directory
+        (expand-file-name "journal" denote-directory))
+  ;; Default keyword for new journal entries. It can also be a list of
+  ;; strings.
+  (setq denote-journal-keyword "journal")
+  ;; Read the doc string of `denote-journal-title-format'.
+  (setq denote-journal-title-format 'day-date-month-year))
+#+end_src
+
 * Overview
 :PROPERTIES:
 :CUSTOM_ID: h:overview
@@ -123,11 +202,12 @@ entry, it creates a new one by calling ~denote-journal-new-entry~
 be done via ~org-capture~  ([[#h:create-a-journal-entry-using-org-capture][Create a journal entry using Org capture]]).
 
 When called with a prefix argument (=C-u= with default key bindings),
-the command ~denote-journal-new-or-existing-entry~ prompts for a date.
-It then determines whether to visit an existing file or create a new
-one, as described above. The date selection interface is controlled by
-the user option ~denote-date-prompt-use-org-read-date~, which is part
-of the main ~denote~ package. By default, this is a simple minibuffer
+the command ~denote-journal-new-or-existing-entry~ prompts for a date
+([[#h:integrate-with-the-calendar-to-view-or-create-journal-entries][Integrate with the ~calendar~ to view or create journal entries]]). It
+then determines whether to visit an existing file or create a new one,
+as described above. The date selection interface is controlled by the
+user option ~denote-date-prompt-use-org-read-date~, which is part of
+the main ~denote~ package. By default, this is a simple minibuffer
 prompt, though users can opt in to the more advanced
 minibuffer+calendar date picker that Org uses for its own date
 selection operations.
@@ -147,6 +227,42 @@ and then links to it. When called with an optional prefix argument
 date and then performs the aforementioned. With a double prefix
 argument (=C-u C-u=), it also produces a link whose description
 includes just the file's identifier.
+
+** Integrate with the ~calendar~ to view or create journal entries
+:PROPERTIES:
+:CUSTOM_ID: h:integrate-with-the-calendar-to-view-or-create-journal-entries
+:END:
+
+[ Part of {{{development-version}}}. ]
+
+#+findex: denote-journal-calendar-new-or-existing
+The command ~denote-journal-calendar-new-or-existing~ creates a new
+journal entry for the date at point in the =M-x calendar= buffer. If
+an entry exists, it visits it. This is the same as the command
+~denote-journal-new-or-existing-entry~ ([[#h:create-a-new-journal-entry-or-use-an-existing-one][Create a new journal entry or use an existing one]]).
+
+#+findex: denote-journal-calendar-find-file
+The command ~denote-journal-calendar-find-file~ visits the Denote
+journal entry corresponding to the date at point in the =M-x
+calendar=. If there are multiple entries, it prompts with minibuffer
+completion to select one among them.
+
+#+findex: denote-journal-calendar-mode
+#+vindex: denote-journal-calendar
+The buffer-local minor mode ~denote-journal-calendar-mode~ marks the
+dates in the =M-x calendar= that have a Denote journal entry. The face
+applied to them is the ~denote-journal-calendar~. Activate the mode
+via the ~calendar-mode-hook~:
+
+#+begin_src emacs-lisp
+(add-hook 'calendar-mode-hook #'denote-journal-calendar-mode)
+#+end_src
+
+#+vindex: denote-journal-calendar-mode-map
+The ~denote-journal-calendar-mode~ also activates the key map called
+~denote-journal-calendar-mode-map~. It defines bindings for the
+aforementioned commands: =F= for ~denote-journal-calendar-find-file~
+and =N= for ~denote-journal-calendar-new-or-existing~.
 
 ** The ~denote-journal-directory~
 :PROPERTIES:
@@ -296,84 +412,6 @@ Sources for ~tmr~:
   + GitLab: <https://gitlab.com/protesilaos/tmr>
 + Backronym: TMR May Ring; Timer Must Run.
 
-* Installation
-:PROPERTIES:
-:CUSTOM_ID: h:installation
-:END:
-#+cindex: Installation instructions
-
-** GNU ELPA package
-:PROPERTIES:
-:CUSTOM_ID: h:gnu-elpa-package
-:END:
-
-The package is available as =denote-journal=.  Simply do:
-
-: M-x package-refresh-contents
-: M-x package-install
-
-And search for it.
-
-GNU ELPA provides the latest stable release.  Those who prefer to follow
-the development process in order to report bugs or suggest changes, can
-use the version of the package from the GNU-devel ELPA archive.  Read:
-https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/.
-
-** Manual installation
-:PROPERTIES:
-:CUSTOM_ID: h:manual-installation
-:END:
-
-Assuming your Emacs files are found in =~/.emacs.d/=, execute the
-following commands in a shell prompt:
-
-#+begin_src sh
-cd ~/.emacs.d
-
-# Create a directory for manually-installed packages
-mkdir manual-packages
-
-# Go to the new directory
-cd manual-packages
-
-# Clone this repo, naming it "denote-journal"
-git clone https://github.com/protesilaos/denote-journal denote-journal
-#+end_src
-
-Finally, in your =init.el= (or equivalent) evaluate this:
-
-#+begin_src emacs-lisp
-;; Make Elisp files in that directory available to the user.
-(add-to-list 'load-path "~/.emacs.d/manual-packages/denote-journal")
-#+end_src
-
-Everything is in place to set up the package.
-
-* Sample configuration
-:PROPERTIES:
-:CUSTOM_ID: h:sample-configuration
-:END:
-#+cindex: Package configuration
-
-#+begin_src emacs-lisp
-(use-package denote-journal
-  :ensure t
-  ;; Bind those to some key for your convenience.
-  :commands ( denote-journal-new-entry
-              denote-journal-new-or-existing-entry
-              denote-journal-link-or-create-entry )
-  :config
-  ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
-  ;; to nil to use the `denote-directory' instead.
-  (setq denote-journal-directory
-        (expand-file-name "journal" denote-directory))
-  ;; Default keyword for new journal entries. It can also be a list of
-  ;; strings.
-  (setq denote-journal-keyword "journal")
-  ;; Read the doc string of `denote-journal-title-format'.
-  (setq denote-journal-title-format 'day-date-month-year))
-#+end_src
-
 * Acknowledgements
 :PROPERTIES:
 :CUSTOM_ID: h:acknowledgements
@@ -384,7 +422,8 @@ Denote Journal is meant to be a collective effort.  Every bit of help matters.
 
 + Author/maintainer :: Protesilaos Stavrou.
 
-+ Contributions to code or the manual :: Honza Pokorny, Vineet C. Kulkarni.
++ Contributions to code or the manual :: Honza Pokorny, Stefan
+  Monnier, Vineet C. Kulkarni.
 
 + Ideas and/or user feedback :: Kevin McCarthy.
 

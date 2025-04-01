@@ -1,4 +1,4 @@
-This is docpyT43x.info, produced by makeinfo version 6.8 from
+This is docTl2TMv.info, produced by makeinfo version 6.8 from
 denote-journal.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docpyT43x.info,  Node: Top,  Next: Overview,  Up: (dir)
+File: docTl2TMv.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -61,30 +61,31 @@ of it.
 
 * Menu:
 
-* Overview::
 * Installation::
 * Sample configuration::
+* Overview::
 * Acknowledgements::
 * GNU Free Documentation License::
 * Indices::
 
 — The Detailed Node Listing —
 
+Installation
+
+* GNU ELPA package::
+* Manual installation::
+
 Overview
 
 * Create new journal entry::
 * Create a new journal entry or use an existing one::
 * Link to a journal entry or create it if missing::
+* Integrate with the calendar to view or create journal entries::
 * The denote-journal-directory::
 * Title format of new journal entries::
 * Create a journal entry using Org capture::
 * The denote-journal-hook::
 * Journaling with a timer::
-
-Installation
-
-* GNU ELPA package::
-* Manual installation::
 
 Indices
 
@@ -94,9 +95,90 @@ Indices
 
 
 
-File: docpyT43x.info,  Node: Overview,  Next: Installation,  Prev: Top,  Up: Top
+File: docTl2TMv.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
-1 Overview
+1 Installation
+**************
+
+* Menu:
+
+* GNU ELPA package::
+* Manual installation::
+
+
+File: docTl2TMv.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+
+1.1 GNU ELPA package
+====================
+
+The package is available as ‘denote-journal’.  Simply do:
+
+     M-x package-refresh-contents
+     M-x package-install
+
+   And search for it.
+
+   GNU ELPA provides the latest stable release.  Those who prefer to
+follow the development process in order to report bugs or suggest
+changes, can use the version of the package from the GNU-devel ELPA
+archive.  Read:
+<https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
+
+
+File: docTl2TMv.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+
+1.2 Manual installation
+=======================
+
+Assuming your Emacs files are found in ‘~/.emacs.d/’, execute the
+following commands in a shell prompt:
+
+     cd ~/.emacs.d
+
+     # Create a directory for manually-installed packages
+     mkdir manual-packages
+
+     # Go to the new directory
+     cd manual-packages
+
+     # Clone this repo, naming it "denote-journal"
+     git clone https://github.com/protesilaos/denote-journal denote-journal
+
+   Finally, in your ‘init.el’ (or equivalent) evaluate this:
+
+     ;; Make Elisp files in that directory available to the user.
+     (add-to-list 'load-path "~/.emacs.d/manual-packages/denote-journal")
+
+   Everything is in place to set up the package.
+
+
+File: docTl2TMv.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+
+2 Sample configuration
+**********************
+
+     (use-package denote-journal
+       :ensure t
+       ;; Bind those to some key for your convenience.
+       :commands ( denote-journal-new-entry
+                   denote-journal-new-or-existing-entry
+                   denote-journal-link-or-create-entry )
+       :hook (calendar-mode . denote-journal-calendar-mode)
+       :config
+       ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
+       ;; to nil to use the `denote-directory' instead.
+       (setq denote-journal-directory
+             (expand-file-name "journal" denote-directory))
+       ;; Default keyword for new journal entries. It can also be a list of
+       ;; strings.
+       (setq denote-journal-keyword "journal")
+       ;; Read the doc string of `denote-journal-title-format'.
+       (setq denote-journal-title-format 'day-date-month-year))
+
+
+File: docTl2TMv.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+
+3 Overview
 **********
 
 The ‘denote-journal’ package makes it easier to use Denote for
@@ -116,6 +198,7 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Create new journal entry::
 * Create a new journal entry or use an existing one::
 * Link to a journal entry or create it if missing::
+* Integrate with the calendar to view or create journal entries::
 * The denote-journal-directory::
 * Title format of new journal entries::
 * Create a journal entry using Org capture::
@@ -123,9 +206,9 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Journaling with a timer::
 
 
-File: docpyT43x.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: docTl2TMv.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
-1.1 Create new journal entry
+3.1 Create new journal entry
 ============================
 
 The command ‘denote-journal-new-entry’ creates a new entry in the
@@ -148,9 +231,9 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: docpyT43x.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: docTl2TMv.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
-1.2 Create a new journal entry or use an existing one
+3.2 Create a new journal entry or use an existing one
 =====================================================
 
 The command ‘denote-journal-new-or-existing-entry’ locates an existing
@@ -167,7 +250,8 @@ done via ‘org-capture’ (*note Create a journal entry using Org
 capture::).
 
    When called with a prefix argument (‘C-u’ with default key bindings),
-the command ‘denote-journal-new-or-existing-entry’ prompts for a date.
+the command ‘denote-journal-new-or-existing-entry’ prompts for a date
+(*note Integrate with the calendar to view or create journal entries::).
 It then determines whether to visit an existing file or create a new
 one, as described above.  The date selection interface is controlled by
 the user option ‘denote-date-prompt-use-org-read-date’, which is part of
@@ -176,9 +260,9 @@ prompt, though users can opt in to the more advanced minibuffer+calendar
 date picker that Org uses for its own date selection operations.
 
 
-File: docpyT43x.info,  Node: Link to a journal entry or create it if missing,  Next: The denote-journal-directory,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: docTl2TMv.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
-1.3 Link to a journal entry or create it if missing
+3.3 Link to a journal entry or create it if missing
 ===================================================
 
 The command ‘denote-journal-link-or-create-entry’ links to the journal
@@ -192,9 +276,40 @@ C-u’), it also produces a link whose description includes just the
 file’s identifier.
 
 
-File: docpyT43x.info,  Node: The denote-journal-directory,  Next: Title format of new journal entries,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: docTl2TMv.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
-1.4 The ‘denote-journal-directory’
+3.4 Integrate with the ‘calendar’ to view or create journal entries
+===================================================================
+
+[ Part of 0.1.0-dev.  ]
+
+   The command ‘denote-journal-calendar-new-or-existing’ creates a new
+journal entry for the date at point in the ‘M-x calendar’ buffer.  If an
+entry exists, it visits it.  This is the same as the command
+‘denote-journal-new-or-existing-entry’ (*note Create a new journal entry
+or use an existing one::).
+
+   The command ‘denote-journal-calendar-find-file’ visits the Denote
+journal entry corresponding to the date at point in the ‘M-x calendar’.
+If there are multiple entries, it prompts with minibuffer completion to
+select one among them.
+
+   The buffer-local minor mode ‘denote-journal-calendar-mode’ marks the
+dates in the ‘M-x calendar’ that have a Denote journal entry.  The face
+applied to them is the ‘denote-journal-calendar’.  Activate the mode via
+the ‘calendar-mode-hook’:
+
+     (add-hook 'calendar-mode-hook #'denote-journal-calendar-mode)
+
+   The ‘denote-journal-calendar-mode’ also activates the key map called
+‘denote-journal-calendar-mode-map’.  It defines bindings for the
+aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
+‘N’ for ‘denote-journal-calendar-new-or-existing’.
+
+
+File: docTl2TMv.info,  Node: The denote-journal-directory,  Next: Title format of new journal entries,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+
+3.5 The ‘denote-journal-directory’
 ==================================
 
 New journal entries are placed in the ‘denote-journal-directory’, which
@@ -207,9 +322,9 @@ notes.  They can still be retrieved easily by searching for the
 file-naming scheme for searching or filtering”).
 
 
-File: docpyT43x.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-directory,  Up: Overview
+File: docTl2TMv.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-directory,  Up: Overview
 
-1.5 Title format of new journal entries
+3.6 Title format of new journal entries
 =======================================
 
 New journal entries will use the current date as the title of the new
@@ -237,9 +352,9 @@ those who like to keep a record of something like a thought or event
 variant thereof like ‘denote-subdirectory’).
 
 
-File: docpyT43x.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: docTl2TMv.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
-1.6 Create a journal entry using Org capture
+3.7 Create a journal entry using Org capture
 ============================================
 
 Users who prefer to consolidate all their note-creating or todo-making
@@ -262,9 +377,9 @@ shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: docpyT43x.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: docTl2TMv.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
-1.7 The ‘denote-journal-hook’
+3.8 The ‘denote-journal-hook’
 =============================
 
 All commands that create a new journal entry call the normal hook
@@ -273,9 +388,9 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: docpyT43x.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: docTl2TMv.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
-1.8 Journaling with a timer
+3.9 Journaling with a timer
 ===========================
 
 Sometimes journaling is done with the intent to hone one’s writing
@@ -334,87 +449,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: docpyT43x.info,  Node: Installation,  Next: Sample configuration,  Prev: Overview,  Up: Top
-
-2 Installation
-**************
-
-* Menu:
-
-* GNU ELPA package::
-* Manual installation::
-
-
-File: docpyT43x.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
-
-2.1 GNU ELPA package
-====================
-
-The package is available as ‘denote-journal’.  Simply do:
-
-     M-x package-refresh-contents
-     M-x package-install
-
-   And search for it.
-
-   GNU ELPA provides the latest stable release.  Those who prefer to
-follow the development process in order to report bugs or suggest
-changes, can use the version of the package from the GNU-devel ELPA
-archive.  Read:
-<https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
-
-
-File: docpyT43x.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
-
-2.2 Manual installation
-=======================
-
-Assuming your Emacs files are found in ‘~/.emacs.d/’, execute the
-following commands in a shell prompt:
-
-     cd ~/.emacs.d
-
-     # Create a directory for manually-installed packages
-     mkdir manual-packages
-
-     # Go to the new directory
-     cd manual-packages
-
-     # Clone this repo, naming it "denote-journal"
-     git clone https://github.com/protesilaos/denote-journal denote-journal
-
-   Finally, in your ‘init.el’ (or equivalent) evaluate this:
-
-     ;; Make Elisp files in that directory available to the user.
-     (add-to-list 'load-path "~/.emacs.d/manual-packages/denote-journal")
-
-   Everything is in place to set up the package.
-
-
-File: docpyT43x.info,  Node: Sample configuration,  Next: Acknowledgements,  Prev: Installation,  Up: Top
-
-3 Sample configuration
-**********************
-
-     (use-package denote-journal
-       :ensure t
-       ;; Bind those to some key for your convenience.
-       :commands ( denote-journal-new-entry
-                   denote-journal-new-or-existing-entry
-                   denote-journal-link-or-create-entry )
-       :config
-       ;; Use the "journal" subdirectory of the `denote-directory'.  Set this
-       ;; to nil to use the `denote-directory' instead.
-       (setq denote-journal-directory
-             (expand-file-name "journal" denote-directory))
-       ;; Default keyword for new journal entries. It can also be a list of
-       ;; strings.
-       (setq denote-journal-keyword "journal")
-       ;; Read the doc string of `denote-journal-title-format'.
-       (setq denote-journal-title-format 'day-date-month-year))
-
-
-File: docpyT43x.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Sample configuration,  Up: Top
+File: docTl2TMv.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -426,13 +461,13 @@ Author/maintainer
      Protesilaos Stavrou.
 
 Contributions to code or the manual
-     Honza Pokorny, Vineet C.  Kulkarni.
+     Honza Pokorny, Stefan Monnier, Vineet C.  Kulkarni.
 
 Ideas and/or user feedback
      Kevin McCarthy.
 
 
-File: docpyT43x.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docTl2TMv.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -914,7 +949,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docpyT43x.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docTl2TMv.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -926,7 +961,7 @@ B Indices
 * Concept index::
 
 
-File: docpyT43x.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docTl2TMv.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -934,15 +969,21 @@ B.1 Function index
  [index ]
 * Menu:
 
+* denote-journal-calendar-find-file:     Integrate with the calendar to view or create journal entries.
+                                                               (line 14)
+* denote-journal-calendar-mode:          Integrate with the calendar to view or create journal entries.
+                                                               (line 19)
+* denote-journal-calendar-new-or-existing: Integrate with the calendar to view or create journal entries.
+                                                               (line  8)
 * denote-journal-link-or-create-entry:   Link to a journal entry or create it if missing.
-                                                                (line 6)
+                                                               (line  6)
 * denote-journal-new-entry:              Create new journal entry.
-                                                                (line 6)
+                                                               (line  6)
 * denote-journal-new-or-existing-entry:  Create a new journal entry or use an existing one.
-                                                                (line 6)
+                                                               (line  6)
 
 
-File: docpyT43x.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docTl2TMv.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -950,17 +991,21 @@ B.2 Variable index
  [index ]
 * Menu:
 
+* denote-journal-calendar:               Integrate with the calendar to view or create journal entries.
+                                                               (line 19)
+* denote-journal-calendar-mode-map:      Integrate with the calendar to view or create journal entries.
+                                                               (line 26)
 * denote-journal-directory:              The denote-journal-directory.
-                                                                (line 6)
+                                                               (line  6)
 * denote-journal-hook:                   The denote-journal-hook.
-                                                                (line 6)
+                                                               (line  6)
 * denote-journal-keyword:                Create new journal entry.
-                                                                (line 6)
+                                                               (line  6)
 * denote-journal-title-format:           Title format of new journal entries.
-                                                                (line 6)
+                                                               (line  6)
 
 
-File: docpyT43x.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docTl2TMv.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
@@ -976,25 +1021,26 @@ B.3 Concept index
 
 Tag Table:
 Node: Top882
-Node: Overview3294
-Node: Create new journal entry4396
-Node: Create a new journal entry or use an existing one5509
-Node: Link to a journal entry or create it if missing7110
-Node: The denote-journal-directory7992
-Node: Title format of new journal entries8741
-Node: Create a journal entry using Org capture10082
-Node: The denote-journal-hook11215
-Node: Journaling with a timer11704
-Node: Installation14094
-Node: GNU ELPA package14281
-Node: Manual installation14850
-Node: Sample configuration15651
-Node: Acknowledgements16587
-Node: GNU Free Documentation License17005
-Node: Indices42366
-Node: Function index42542
-Node: Variable index43155
-Node: Concept index43896
+Node: Installation3364
+Node: GNU ELPA package3546
+Node: Manual installation4115
+Node: Sample configuration4916
+Node: Overview5904
+Node: Create new journal entry7093
+Node: Create a new journal entry or use an existing one8206
+Node: Link to a journal entry or create it if missing9879
+Node: Integrate with the calendar to view or create journal entries10794
+Node: The denote-journal-directory12339
+Node: Title format of new journal entries13102
+Node: Create a journal entry using Org capture14443
+Node: The denote-journal-hook15576
+Node: Journaling with a timer16065
+Node: Acknowledgements18455
+Node: GNU Free Documentation License18877
+Node: Indices44238
+Node: Function index44414
+Node: Variable index45560
+Node: Concept index46655
 
 End Tag Table
 
