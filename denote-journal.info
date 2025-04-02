@@ -1,4 +1,4 @@
-This is docTl2TMv.info, produced by makeinfo version 6.8 from
+This is doctqyk1T.info, produced by makeinfo version 6.8 from
 denote-journal.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docTl2TMv.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: doctqyk1T.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -95,7 +95,7 @@ Indices
 
 
 
-File: docTl2TMv.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: doctqyk1T.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -106,7 +106,7 @@ File: docTl2TMv.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docTl2TMv.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: doctqyk1T.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -125,7 +125,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docTl2TMv.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: doctqyk1T.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -152,7 +152,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docTl2TMv.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+File: doctqyk1T.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -176,7 +176,7 @@ File: docTl2TMv.info,  Node: Sample configuration,  Next: Overview,  Prev: Insta
        (setq denote-journal-title-format 'day-date-month-year))
 
 
-File: docTl2TMv.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+File: doctqyk1T.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
 
 3 Overview
 **********
@@ -206,7 +206,7 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Journaling with a timer::
 
 
-File: docTl2TMv.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: doctqyk1T.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
 3.1 Create new journal entry
 ============================
@@ -231,7 +231,7 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: docTl2TMv.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: doctqyk1T.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
 3.2 Create a new journal entry or use an existing one
 =====================================================
@@ -260,7 +260,7 @@ prompt, though users can opt in to the more advanced minibuffer+calendar
 date picker that Org uses for its own date selection operations.
 
 
-File: docTl2TMv.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: doctqyk1T.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
 3.3 Link to a journal entry or create it if missing
 ===================================================
@@ -276,7 +276,7 @@ C-u’), it also produces a link whose description includes just the
 file’s identifier.
 
 
-File: docTl2TMv.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: doctqyk1T.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
 3.4 Integrate with the ‘calendar’ to view or create journal entries
 ===================================================================
@@ -307,7 +307,7 @@ aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
 ‘N’ for ‘denote-journal-calendar-new-or-existing’.
 
 
-File: docTl2TMv.info,  Node: The denote-journal-directory,  Next: Title format of new journal entries,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+File: doctqyk1T.info,  Node: The denote-journal-directory,  Next: Title format of new journal entries,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
 
 3.5 The ‘denote-journal-directory’
 ==================================
@@ -322,37 +322,36 @@ notes.  They can still be retrieved easily by searching for the
 file-naming scheme for searching or filtering”).
 
 
-File: docTl2TMv.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-directory,  Up: Overview
+File: doctqyk1T.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-directory,  Up: Overview
 
 3.6 Title format of new journal entries
 =======================================
 
-New journal entries will use the current date as the title of the new
-entry.  The exact format is controlled by the user option
-‘denote-journal-title-format’.  Acceptable values for this user option
-and their corresponding styles are:
+New journal entries will use the current date as the title of the entry.
+The exact format is controlled by the user option
+‘denote-journal-title-format’.  The value it can take is either nil, a
+custom string, or a symbol:
 
-Symbol                    Style
---------------------------------------------------------------
-day                       Monday
-day-date-month-year       Monday 19 September 2023
-day-date-month-year-24h   Monday 19 September 2023 20:49
-day-date-month-year-12h   Monday 19 September 2023 08:49 PM
+   • When ‘denote-journal-title-format’ is set to a nil value, then new
+     journal entries always prompt for a title.  Users will want this if
+     they prefer to journal using a given theme for the day rather than
+     the date itself (e.g.  instead of “1st of April 2025” they may
+     prefer something like “Early Spring at the hut”).
 
-   For example:
+   • When ‘denote-journal-title-format’ is set to a symbol, it is one
+     among ‘day’ (results in a title like ‘Tuesday’),
+     ‘day-date-month-year’ (for a result like ‘Tuesday 1 April 2025’),
+     ‘day-date-month-year-24h’ (for ‘Tuesday 1 April 2025 13:46’), or
+     ‘day-date-month-year-12h’ (e.g.  ‘Tuesday 1 April 2025 02:46 PM’).
 
-     (setq denote-journal-title-format 'day-date-month-year)
-
-   If the value of this user option is ‘nil’, then the command
-‘denote-journal-new-entry’ will prompt for a title.  In terms of
-workflow, using the current date as the title is better for maintaining
-a daily journal.  A prompt for an arbitrary title is more suitable for
-those who like to keep a record of something like a thought or event
-(though this can also be achieved with the regular ‘denote’ command or a
-variant thereof like ‘denote-subdirectory’).
+   • When ‘denote-journal-title-format’ is set to a string, it is used
+     literally except for any “format specifiers”, as interpreted by the
+     function ‘format-time-string’, which are replaced by their given
+     date component.  For example, the ‘"Week %V on %A %e %B %Y at
+     %H:%M"’ will yield a title like ‘Week 14 on 1 April 2025 at 13:48’.
 
 
-File: docTl2TMv.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: doctqyk1T.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
 3.7 Create a journal entry using Org capture
 ============================================
@@ -377,7 +376,7 @@ shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: docTl2TMv.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: doctqyk1T.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
 3.8 The ‘denote-journal-hook’
 =============================
@@ -388,7 +387,7 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: docTl2TMv.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: doctqyk1T.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
 3.9 Journaling with a timer
 ===========================
@@ -449,7 +448,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: docTl2TMv.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
+File: doctqyk1T.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -467,7 +466,7 @@ Ideas and/or user feedback
      Kevin McCarthy.
 
 
-File: docTl2TMv.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: doctqyk1T.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -949,7 +948,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docTl2TMv.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: doctqyk1T.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -961,7 +960,7 @@ B Indices
 * Concept index::
 
 
-File: docTl2TMv.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: doctqyk1T.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -983,7 +982,7 @@ B.1 Function index
                                                                (line  6)
 
 
-File: docTl2TMv.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: doctqyk1T.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -1005,7 +1004,7 @@ B.2 Variable index
                                                                (line  6)
 
 
-File: docTl2TMv.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: doctqyk1T.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
@@ -1032,15 +1031,15 @@ Node: Link to a journal entry or create it if missing9879
 Node: Integrate with the calendar to view or create journal entries10794
 Node: The denote-journal-directory12339
 Node: Title format of new journal entries13102
-Node: Create a journal entry using Org capture14443
-Node: The denote-journal-hook15576
-Node: Journaling with a timer16065
-Node: Acknowledgements18455
-Node: GNU Free Documentation License18877
-Node: Indices44238
-Node: Function index44414
-Node: Variable index45560
-Node: Concept index46655
+Node: Create a journal entry using Org capture14687
+Node: The denote-journal-hook15820
+Node: Journaling with a timer16309
+Node: Acknowledgements18699
+Node: GNU Free Documentation License19121
+Node: Indices44482
+Node: Function index44658
+Node: Variable index45804
+Node: Concept index46899
 
 End Tag Table
 
