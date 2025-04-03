@@ -66,21 +66,30 @@ It is used by `denote-journal-new-entry' (or related)."
 
 (defcustom denote-journal-title-format 'day-date-month-year-24h
   "Date format to construct the title with `denote-journal-new-entry'.
-The value is either a symbol or an arbitrary string that is
-passed to `format-time-string' (consult its documentation for the
-technicalities, such as how to include week numbers).
+The value it can take is either nil, a
+custom string, or a symbol:
 
-Acceptable symbols and their corresponding styles are:
+- When `denote-journal-title-format' is set to a nil value, then new
+  journal entries always prompt for a title.  Users will want this if
+  they prefer to journal using a given theme for the day rather than
+  the date itself (e.g. instead of \"1st of April 2025\" they may prefer
+  something like \"Early Spring at the hut\").
 
-| Symbol                  | Style                             |
-|-------------------------+-----------------------------------|
-| day                     | Monday                            |
-| day-date-month-year     | Monday 19 September 2023          |
-| day-date-month-year-24h | Monday 19 September 2023 20:49    |
-| day-date-month-year-12h | Monday 19 September 2023 08:49 PM |
+- When `denote-journal-title-format' is set to an empty or blank
+  string (string with only spaces), then new journal entries will not
+  use a file title.
 
-With a nil value, make `denote-journal-new-entry' prompt
-for a title."
+- When `denote-journal-title-format' is set to a symbol, it is one
+  among `day' (results in a title like \"Tuesday\"), `day-date-month-year'
+  (for a result like \"Tuesday 1 April 2025\"), `day-date-month-year-24h'
+  (for \"Tuesday 1 April 2025 13:46\"), or `day-date-month-year-12h'
+  (e.g. \"Tuesday 1 April 2025 02:46 PM\").
+
+- When `denote-journal-title-format' is set to a string, it is used
+  literally except for any \"format specifiers\", as interpreted by the
+  function `format-time-string', which are replaced by their given
+  date component.  For example, the `\"Week %V on %A %e %B %Y at %H:%M\"''
+  will yield a title like \"Week 14 on 1 April 2025 at 13:48\"."
   :group 'denote-journal
   :type '(choice
           (const :tag "Prompt for title with `denote-journal-new-entry'" nil)
@@ -137,32 +146,35 @@ journal entry (refer to the `tmr' package on GNU ELPA)."
        (string-match-p (denote-journal--keyword-regex) (file-name-nondirectory filename))))
 
 (defun denote-journal-daily--title-format (&optional date)
-  "Return present date in `denote-journal-title-format' or prompt for title.
-With optional DATE, use it instead of the present date.  DATE has
-the same format as that returned by `current-time'."
-  (format-time-string
-   (if (and denote-journal-title-format
-            (stringp denote-journal-title-format))
-       denote-journal-title-format
-     (pcase denote-journal-title-format
-       ('day "%A")
-       ('day-date-month-year "%A %e %B %Y")
-       ('day-date-month-year-24h "%A %e %B %Y %H:%M")
-       ('day-date-month-year-12h "%A %e %B %Y %I:%M %^p")
-       (_ (denote-title-prompt (format-time-string "%F" date)))))
-   date))
+  "Return appropriate value for `denote-journal-title-format'.
+With optional DATE, use it instead of the present date wherever
+relevant.  DATE has the same format as that returned by `current-time'."
+  (let ((specifiers (pcase denote-journal-title-format
+                      ((pred null)
+                       (cons
+                        (denote-title-prompt (format-time-string "%F" date) "New journal file TITLE")
+                        :skip))
+                      ((and (pred stringp) (pred string-blank-p))
+                       (cons "" :skip))
+                      ((pred stringp) denote-journal-title-format)
+                      ('day "%A")
+                      ('day-date-month-year "%A %e %B %Y")
+                      ('day-date-month-year-24h "%A %e %B %Y %H:%M")
+                      ('day-date-month-year-12h "%A %e %B %Y %I:%M %^p"))))
+    (if (consp specifiers)
+        (car specifiers)
+      (format-time-string specifiers date))))
 
 (defun denote-journal--get-template ()
   "Return template that has `journal' key in `denote-templates'.
 If no template with `journal' key exists but `denote-templates'
 is non-nil, prompt the user for a template among
-`denote-templates'.  Else return nil.
-
-Also see `denote-journal-new-entry'."
-  (if-let* ((template (alist-get 'journal denote-templates)))
-      template
-    (when denote-templates
-      (denote-template-prompt))))
+`denote-templates'.  Else return nil."
+  ;; FIXME 2025-04-02: Here we assume that `denote-templates' is an
+  ;; alist.  Maybe we need to be more careful.
+  (when denote-templates
+    (or (alist-get 'journal denote-templates)
+        (denote-template-prompt))))
 
 ;;;###autoload
 (defun denote-journal-new-entry (&optional date)

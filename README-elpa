@@ -307,6 +307,10 @@ section 4.4
     the date itself (e.g. instead of “1st of April 2025” they may prefer
     something like “Early Spring at the hut”).
 
+  • When `denote-journal-title-format' is set to an empty or blank
+    string (string with only spaces), then new journal entries will not
+    use a file title. [ Part of 0.1.0-dev. ]
+
   • When `denote-journal-title-format' is set to a symbol, it is one
     among `day' (results in a title like `Tuesday'),
     `day-date-month-year' (for a result like `Tuesday 1 April 2025'),
