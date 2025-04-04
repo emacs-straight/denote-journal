@@ -329,7 +329,7 @@ file's title.  This has the same meaning as in `denote-link'."
                (years (list previous-year current-year next-year))
                (months (list previous-month current-month next-month))
                (time-regexp (concat (regexp-opt (mapcar #'number-to-string years))
-                                    (regexp-opt (mapcar #'number-to-string months))))
+                                    (regexp-opt (mapcar (lambda (number) (format "%02d" number)) months))))
                (keyword-regexp (denote-journal--keyword-regex)))
     (denote-directory-files
      ;; NOTE 2025-03-31: This complex regular expression is to account
@@ -345,7 +345,8 @@ file's title.  This has the same meaning as in `denote-link'."
               (files (denote-journal-calendar--get-files date))
               (dates (delq nil (mapcar #'denote-journal-calendar--file-to-date files))))
     (dolist (date dates)
-      (calendar-mark-visible-date date 'denote-journal-calendar))))
+      (when (calendar-date-is-visible-p date)
+        (calendar-mark-visible-date date 'denote-journal-calendar)))))
 
 (defun denote-journal-calendar--date-to-time (calendar-date)
   "Return internal time of `calendar' CALENDAR-DATE.
