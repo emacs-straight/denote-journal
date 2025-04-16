@@ -11,13 +11,13 @@ This manual, written by Protesilaos Stavrou, describes the customization
 options for the Emacs package called `denote' (or `denote.el'), and
 provides every other piece of information pertinent to it.
 
-The documentation furnished herein corresponds to stable version 0.0.0,
-released on N/A.  Any reference to a newer feature which does not yet
-form part of the latest tagged commit, is explicitly marked as such.
+The documentation furnished herein corresponds to stable version 0.1.0,
+released on 2025-04-15.  Any reference to a newer feature which does not
+yet form part of the latest tagged commit, is explicitly marked as such.
 
-Current development target is 0.1.0-dev.
+Current development target is 0.2.0-dev.
 
-⁃ Package name (GNU ELPA): `denote-journal' (⚠️ Not available yet)
+⁃ Package name (GNU ELPA): `denote-journal'
 ⁃ Official manual: <https://protesilaos.com/emacs/denote-journal>
 ⁃ Git repository: <https://github.com/protesilaos/denote-journal>
 ⁃ Backronym: Denote… Journaling Obviously Utilises Reasonableness
@@ -248,8 +248,6 @@ section 4.4
 4.4 Integrate with the `calendar' to view or create journal entries
 ───────────────────────────────────────────────────────────────────
 
-  [ Part of 0.1.0-dev. ]
-
   The command `denote-journal-calendar-new-or-existing' creates a new
   journal entry for the date at point in the `M-x calendar' buffer. If
   an entry exists, it visits it. This is the same as the command
@@ -309,7 +307,7 @@ section 4.4
 
   • When `denote-journal-title-format' is set to an empty or blank
     string (string with only spaces), then new journal entries will not
-    use a file title. [ Part of 0.1.0-dev. ]
+    use a file title.
 
   • When `denote-journal-title-format' is set to a symbol, it is one
     among `day' (results in a title like `Tuesday'),
