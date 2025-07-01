@@ -115,7 +115,8 @@ journal entry (refer to the `tmr' package on GNU ELPA)."
   :type 'hook)
 
 (defun denote-journal-directory ()
-  "Make the variable `denote-journal-directory' and its parents."
+  "Return the variable `denote-journal-directory' as a directory.
+If the path does not exist, then make it first."
   (if-let* (((stringp denote-journal-directory))
             (directory (file-name-as-directory (expand-file-name denote-journal-directory))))
       (progn
@@ -407,10 +408,9 @@ among them."
 Add the function `denote-journal-calendar-mode' to the
 `calendar-mode-hook' for changes to take effect."
   :global nil
-  (if denote-journal-calendar-mode
-      (dolist (hook '(calendar-today-visible-hook calendar-today-invisible-hook))
-        (add-hook hook #'denote-journal-calendar-mark-dates nil :local))
-    (dolist (hook '(calendar-today-visible-hook calendar-today-invisible-hook))
+  (dolist (hook '(calendar-today-visible-hook calendar-today-invisible-hook))
+    (if denote-journal-calendar-mode
+        (add-hook hook #'denote-journal-calendar-mark-dates nil :local)
       (remove-hook hook #'denote-journal-calendar-mark-dates :local))))
 
 (provide 'denote-journal)
