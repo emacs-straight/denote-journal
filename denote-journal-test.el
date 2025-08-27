@@ -65,6 +65,53 @@
            (let ((denote-journal-title-format 'day-date-month-year-24h))
              (denote-journal-daily--title-format)))))
 
+(ert-deftest djt--denote-journal--filename-regexp ()
+  "Test that `denote-journal--filename-regexp' returns the expected regular expression."
+  (let ((time (denote-valid-date-p "2025-08-23")))
+    (let ((denote-file-name-components-order '(identifier signature title keywords)))
+      (should (string=
+               (denote-journal--filename-regexp time 'daily)
+               "20250823T[0-9]\\{6\\}.*?_journal"))
+      (should (string=
+               (denote-journal--filename-regexp time 'weekly)
+               "\\(?:202508\\(?:1[89]\\|2[0-4]\\)\\)T[0-9]\\{6\\}.*?_journal"))
+      (should (string=
+               (denote-journal--filename-regexp time 'monthly)
+               "202508[0-9]\\{2\\}T[0-9]\\{6\\}.*?_journal"))
+      (should (string=
+               (denote-journal--filename-regexp time 'yearly)
+               "2025[0-9]\\{4\\}T[0-9]\\{6\\}.*?_journal")))
+
+    (let ((denote-file-name-components-order '(keywords signature title identifier)))
+      (should (string=
+               (denote-journal--filename-regexp time 'daily)
+               "_journal.*?@@20250823T[0-9]\\{6\\}"))
+      (should (string=
+               (denote-journal--filename-regexp time 'weekly)
+               "_journal.*?@@\\(?:202508\\(?:1[89]\\|2[0-4]\\)\\)T[0-9]\\{6\\}"))
+      (should (string=
+               (denote-journal--filename-regexp time 'monthly)
+               "_journal.*?@@202508[0-9]\\{2\\}T[0-9]\\{6\\}"))
+      (should (string=
+               (denote-journal--filename-regexp time 'yearly)
+               "_journal.*?@@2025[0-9]\\{4\\}T[0-9]\\{6\\}")))))
+
+(ert-deftest djt--denote-journal--date-in-interval-p ()
+  "Test that `denote-journal--date-in-interval-p' does the right thing."
+  (cl-letf* ((current-date (denote-valid-date-p "2025-08-23"))
+             (older-date (denote-valid-date-p "2024-08-23"))
+             ;; This will change the meaning of `current-time',
+             ;; otherwise we cannot have a fixed test here.
+             ((symbol-function #'current-time) (lambda () current-date)))
+    (should (eq (denote-journal--date-in-interval-p current-date 'daily) current-date))
+    (should (eq (denote-journal--date-in-interval-p current-date 'weekly) current-date))
+    (should (eq (denote-journal--date-in-interval-p current-date 'monthly) current-date))
+    (should (eq (denote-journal--date-in-interval-p current-date 'yearly) current-date))
+    (should (eq (denote-journal--date-in-interval-p older-date 'daily) older-date))
+    (should (null (denote-journal--date-in-interval-p older-date 'weekly)))
+    (should (null (denote-journal--date-in-interval-p older-date 'monthly)))
+    (should (null (denote-journal--date-in-interval-p older-date 'yearly)))))
+
 (provide 'denote-journal-test)
 ;;; denote-journal-test.el ends here
 
