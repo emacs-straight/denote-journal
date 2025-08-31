@@ -1,4 +1,4 @@
-This is docB53ZOF.info, produced by makeinfo version 6.8 from
+This is docxNbjBn.info, produced by makeinfo version 6.8 from
 denote-journal.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docB53ZOF.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docxNbjBn.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -82,7 +82,8 @@ Overview
 * Create a new journal entry or use an existing one::
 * Link to a journal entry or create it if missing::
 * Integrate with the calendar to view or create journal entries::
-* The denote-journal-directory::
+* The denote-journal-directory option::
+* The denote-journal-signature option::
 * Title format of new journal entries::
 * Create a journal entry using Org capture::
 * The denote-journal-hook::
@@ -96,7 +97,7 @@ Indices
 
 
 
-File: docB53ZOF.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docxNbjBn.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -107,7 +108,7 @@ File: docB53ZOF.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docB53ZOF.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docxNbjBn.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -126,7 +127,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docB53ZOF.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docxNbjBn.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -153,7 +154,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docB53ZOF.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+File: docxNbjBn.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -177,7 +178,7 @@ File: docB53ZOF.info,  Node: Sample configuration,  Next: Overview,  Prev: Insta
        (setq denote-journal-title-format 'day-date-month-year))
 
 
-File: docB53ZOF.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+File: docxNbjBn.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
 
 3 Overview
 **********
@@ -200,14 +201,15 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Create a new journal entry or use an existing one::
 * Link to a journal entry or create it if missing::
 * Integrate with the calendar to view or create journal entries::
-* The denote-journal-directory::
+* The denote-journal-directory option::
+* The denote-journal-signature option::
 * Title format of new journal entries::
 * Create a journal entry using Org capture::
 * The denote-journal-hook::
 * Journaling with a timer::
 
 
-File: docB53ZOF.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: docxNbjBn.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
 3.1 Create new journal entry
 ============================
@@ -223,7 +225,8 @@ while any command that generates a new journal entry calls the
 ‘denote-journal-hook’:
 
    • *note The denote-journal-hook::.
-   • *note The denote-journal-directory::.
+   • *note The ‘denote-journal-directory’: The denote-journal-directory
+     option.
 
    The command ‘denote-journal-new-entry’ creates a new entry
 unconditionally.  This means that it will not check if the present day
@@ -232,7 +235,7 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: docB53ZOF.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: docxNbjBn.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
 3.2 Create a new journal entry or use an existing one
 =====================================================
@@ -241,14 +244,14 @@ The command ‘denote-journal-new-or-existing-entry’ locates an existing
 journal entry and opens it for editing or creates a new one.
 
    A journal entry is an editable file that has ‘denote-journal-keyword’
-as part of its file name.  If there are multiple journal entries for the
-current date, ‘denote-journal-new-or-existing-entry’ prompts to select
-one among them using minibuffer completion.  If there is only one
-matching file, it visits it outright.  If there is no journal entry, it
-creates a new one by calling ‘denote-journal-new-entry’ (*note Create
-new journal entry::).  Depending on one’s workflow, this can also be
-done via ‘org-capture’ (*note Create a journal entry using Org
-capture::).
+as part of its file name (*note The denote-journal-signature option::).
+If there are multiple journal entries for the current date,
+‘denote-journal-new-or-existing-entry’ prompts to select one among them
+using minibuffer completion.  If there is only one matching file, it
+visits it outright.  If there is no journal entry, it creates a new one
+by calling ‘denote-journal-new-entry’ (*note Create new journal
+entry::).  Depending on one’s workflow, this can also be done via
+‘org-capture’ (*note Create a journal entry using Org capture::).
 
    When called with a prefix argument (‘C-u’ with default key bindings),
 the command ‘denote-journal-new-or-existing-entry’ prompts for a date
@@ -260,8 +263,14 @@ the main ‘denote’ package.  By default, this is a simple minibuffer
 prompt, though users can opt in to the more advanced minibuffer+calendar
 date picker that Org uses for its own date selection operations.
 
+   This command consults the user option ‘denote-journal-interval’ to
+determine when to create a new file or visit an existing one.  The
+‘denote-journal-interval’ can be set to a value of ‘daily’, ‘weekly’,
+‘monthly’, or ‘yearly’.  Any other value is internall treated as
+‘daily’.  [ The ‘denote-journal-interval’ is part of 0.2.0-dev.  ]
+
 
-File: docB53ZOF.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: docxNbjBn.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
 3.3 Link to a journal entry or create it if missing
 ===================================================
@@ -277,7 +286,7 @@ C-u’), it also produces a link whose description includes just the
 file’s identifier.
 
 
-File: docB53ZOF.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: docxNbjBn.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
 3.4 Integrate with the ‘calendar’ to view or create journal entries
 ===================================================================
@@ -306,10 +315,10 @@ aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
 ‘N’ for ‘denote-journal-calendar-new-or-existing’.
 
 
-File: docB53ZOF.info,  Node: The denote-journal-directory,  Next: Title format of new journal entries,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+File: docxNbjBn.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
 
-3.5 The ‘denote-journal-directory’
-==================================
+3.5 The ‘denote-journal-directory’ option
+=========================================
 
 New journal entries are placed in the ‘denote-journal-directory’, which
 defaults to a subdirectory of ‘denote-directory’ called ‘journal’.
@@ -321,9 +330,36 @@ notes.  They can still be retrieved easily by searching for the
 file-naming scheme for searching or filtering”).
 
 
-File: docB53ZOF.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-directory,  Up: Overview
+File: docxNbjBn.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
 
-3.6 Title format of new journal entries
+3.6 The ‘denote-journal-signature’ option
+=========================================
+
+[ The ‘denote-journal-signature’ is part of 0.2.0-dev.  ]
+
+   The user option ‘denote-journal-signature’ specifies a predefined
+signature to use in new journal entries.  This is used by
+‘denote-journal-new-entry’ and all related commands (*note Create new
+journal entry::).
+
+   The value of this user option can be one of the following:
+
+   • ‘nil’, which means to not use a predefined signature;
+   • a string, which is used as-is;
+   • a function that returns a string, which is then used as-is.
+
+   In the case of a function, users may wish to integrate the
+‘denote-journal’ package with ‘denote-sequence’.  For example, each new
+journal entry should be defined as a new parent sequence.  Thus:
+
+     (setq denote-journal-signature
+           (lambda ()
+             (denote-sequence-get-new 'parent)))
+
+
+File: docxNbjBn.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
+
+3.7 Title format of new journal entries
 =======================================
 
 New journal entries will use the current date as the title of the entry.
@@ -354,9 +390,9 @@ custom string, or a symbol:
      %H:%M"’ will yield a title like ‘Week 14 on 1 April 2025 at 13:48’.
 
 
-File: docB53ZOF.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: docxNbjBn.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
-3.7 Create a journal entry using Org capture
+3.8 Create a journal entry using Org capture
 ============================================
 
 Users who prefer to consolidate all their note-creating or todo-making
@@ -379,9 +415,9 @@ shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: docB53ZOF.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: docxNbjBn.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
-3.8 The ‘denote-journal-hook’
+3.9 The ‘denote-journal-hook’
 =============================
 
 All commands that create a new journal entry call the normal hook
@@ -390,10 +426,10 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: docB53ZOF.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: docxNbjBn.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
-3.9 Journaling with a timer
-===========================
+3.10 Journaling with a timer
+============================
 
 Sometimes journaling is done with the intent to hone one’s writing
 skills.  Perhaps you are learning a new language or wish to communicate
@@ -451,7 +487,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: docB53ZOF.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
+File: docxNbjBn.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -467,10 +503,10 @@ Contributions to code or the manual
      C.  Kulkarni, gk2803, jbwfu.
 
 Ideas and/or user feedback
-     Alan Schmitt, Kevin McCarthy.
+     Alan Schmitt, Kevin McCarthy, Halogen3576.
 
 
-File: docB53ZOF.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docxNbjBn.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -952,7 +988,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docB53ZOF.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docxNbjBn.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -964,7 +1000,7 @@ B Indices
 * Concept index::
 
 
-File: docB53ZOF.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docxNbjBn.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -986,7 +1022,7 @@ B.1 Function index
                                                                (line  6)
 
 
-File: docB53ZOF.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docxNbjBn.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -998,17 +1034,21 @@ B.2 Variable index
                                                                (line 17)
 * denote-journal-calendar-mode-map:      Integrate with the calendar to view or create journal entries.
                                                                (line 24)
-* denote-journal-directory:              The denote-journal-directory.
+* denote-journal-directory:              The denote-journal-directory option.
                                                                (line  6)
 * denote-journal-hook:                   The denote-journal-hook.
                                                                (line  6)
+* denote-journal-interval:               Create a new journal entry or use an existing one.
+                                                               (line 29)
 * denote-journal-keyword:                Create new journal entry.
                                                                (line  6)
+* denote-journal-signature:              The denote-journal-signature option.
+                                                               (line  8)
 * denote-journal-title-format:           Title format of new journal entries.
                                                                (line  6)
 
 
-File: docB53ZOF.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docxNbjBn.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
@@ -1024,26 +1064,27 @@ B.3 Concept index
 
 Tag Table:
 Node: Top882
-Node: Installation3344
-Node: GNU ELPA package3526
-Node: Manual installation4095
-Node: Sample configuration4896
-Node: Overview5884
-Node: Create new journal entry7073
-Node: Create a new journal entry or use an existing one8186
-Node: Link to a journal entry or create it if missing9859
-Node: Integrate with the calendar to view or create journal entries10774
-Node: The denote-journal-directory12291
-Node: Title format of new journal entries13054
-Node: Create a journal entry using Org capture14810
-Node: The denote-journal-hook15943
-Node: Journaling with a timer16432
-Node: Acknowledgements18822
-Node: GNU Free Documentation License19308
-Node: Indices44669
-Node: Function index44845
-Node: Variable index45991
-Node: Concept index47086
+Node: Installation3391
+Node: GNU ELPA package3573
+Node: Manual installation4142
+Node: Sample configuration4943
+Node: Overview5931
+Node: Create new journal entry7167
+Node: Create a new journal entry or use an existing one8326
+Node: Link to a journal entry or create it if missing10416
+Node: Integrate with the calendar to view or create journal entries11331
+Node: The denote-journal-directory option12855
+Node: The denote-journal-signature option13639
+Node: Title format of new journal entries14736
+Node: Create a journal entry using Org capture16499
+Node: The denote-journal-hook17632
+Node: Journaling with a timer18121
+Node: Acknowledgements20513
+Node: GNU Free Documentation License21012
+Node: Indices46373
+Node: Function index46549
+Node: Variable index47695
+Node: Concept index49113
 
 End Tag Table
 
