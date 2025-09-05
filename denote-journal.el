@@ -470,7 +470,7 @@ CALENDAR-DATE is a list of three numbers, in the form of (MONTH DAY YEAR)."
   "Return path to Denote journal entry corresponding to CALENDAR-DATE.
 CALENDAR-DATE is a list of three numbers, in the form of (MONTH DAY YEAR)."
   (when-let* ((date (denote-journal-calendar--date-to-time calendar-date)))
-    (denote-journal--get-entry date)))
+    (denote-journal--get-entry date denote-journal-interval)))
 
 (defun denote-journal-calendar-find-file ()
   "Show the Denote journal entry for the `calendar' date at point.
