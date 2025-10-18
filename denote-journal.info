@@ -1,4 +1,4 @@
-This is doc5pCWaA.info, produced by makeinfo version 6.8 from
+This is docks6M2c.info, produced by makeinfo version 6.8 from
 denote-journal.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doc5pCWaA.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docks6M2c.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -44,11 +44,11 @@ customization options for the Emacs package called ‘denote’ (or
 it.
 
    The documentation furnished herein corresponds to stable version
-0.1.0, released on 2025-04-15.  Any reference to a newer feature which
+0.2.0, released on 2025-10-17.  Any reference to a newer feature which
 does not yet form part of the latest tagged commit, is explicitly marked
 as such.
 
-   Current development target is 0.2.0-dev.
+   Current development target is 0.3.0-dev.
 
    • Package name (GNU ELPA): ‘denote-journal’
    • Official manual: <https://protesilaos.com/emacs/denote-journal>
@@ -97,7 +97,7 @@ Indices
 
 
 
-File: doc5pCWaA.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docks6M2c.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -108,7 +108,7 @@ File: doc5pCWaA.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: doc5pCWaA.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docks6M2c.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -127,7 +127,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: doc5pCWaA.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docks6M2c.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -154,7 +154,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: doc5pCWaA.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+File: docks6M2c.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -178,7 +178,7 @@ File: doc5pCWaA.info,  Node: Sample configuration,  Next: Overview,  Prev: Insta
        (setq denote-journal-title-format 'day-date-month-year))
 
 
-File: doc5pCWaA.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+File: docks6M2c.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
 
 3 Overview
 **********
@@ -209,7 +209,7 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Journaling with a timer::
 
 
-File: doc5pCWaA.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: docks6M2c.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
 3.1 Create new journal entry
 ============================
@@ -220,8 +220,6 @@ string ‘journal’ by default (read the Denote manual about the
 file-naming scheme).  The user can set this keyword to an arbitrary
 string (single word is preferred), a list of strings, a function that
 returns a string or list of strings, or ‘nil’ to not use any keywords.
-[ The optional function value of ‘denote-journal-keyword’ is part of
-0.2.0-dev.  ]
 
    New journal entries are stored in the ‘denote-journal-directory’,
 while any command that generates a new journal entry calls the
@@ -238,7 +236,7 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: doc5pCWaA.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: docks6M2c.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
 3.2 Create a new journal entry or use an existing one
 =====================================================
@@ -270,10 +268,10 @@ date picker that Org uses for its own date selection operations.
 determine when to create a new file or visit an existing one.  The
 ‘denote-journal-interval’ can be set to a value of ‘daily’, ‘weekly’,
 ‘monthly’, or ‘yearly’.  Any other value is internall treated as
-‘daily’.  [ The ‘denote-journal-interval’ is part of 0.2.0-dev.  ]
+‘daily’.
 
 
-File: doc5pCWaA.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: docks6M2c.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
 3.3 Link to a journal entry or create it if missing
 ===================================================
@@ -289,7 +287,7 @@ C-u’), it also produces a link whose description includes just the
 file’s identifier.
 
 
-File: doc5pCWaA.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: docks6M2c.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
 3.4 Integrate with the ‘calendar’ to view or create journal entries
 ===================================================================
@@ -318,7 +316,7 @@ aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
 ‘N’ for ‘denote-journal-calendar-new-or-existing’.
 
 
-File: doc5pCWaA.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+File: docks6M2c.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
 
 3.5 The ‘denote-journal-directory’ option
 =========================================
@@ -333,14 +331,12 @@ notes.  They can still be retrieved easily by searching for the
 file-naming scheme for searching or filtering”).
 
 
-File: doc5pCWaA.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
+File: docks6M2c.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
 
 3.6 The ‘denote-journal-signature’ option
 =========================================
 
-[ The ‘denote-journal-signature’ is part of 0.2.0-dev.  ]
-
-   The user option ‘denote-journal-signature’ specifies a predefined
+The user option ‘denote-journal-signature’ specifies a predefined
 signature to use in new journal entries.  This is used by
 ‘denote-journal-new-entry’ and all related commands (*note Create new
 journal entry::).
@@ -360,7 +356,7 @@ journal entry should be defined as a new parent sequence.  Thus:
              (denote-sequence-get-new 'parent)))
 
 
-File: doc5pCWaA.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
+File: docks6M2c.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
 
 3.7 Title format of new journal entries
 =======================================
@@ -393,7 +389,7 @@ custom string, or a symbol:
      %H:%M"’ will yield a title like ‘Week 14 on 1 April 2025 at 13:48’.
 
 
-File: doc5pCWaA.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: docks6M2c.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
 3.8 Create a journal entry using Org capture
 ============================================
@@ -418,7 +414,7 @@ shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: doc5pCWaA.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: docks6M2c.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
 3.9 The ‘denote-journal-hook’
 =============================
@@ -429,7 +425,7 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: doc5pCWaA.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: docks6M2c.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
 3.10 Journaling with a timer
 ============================
@@ -490,7 +486,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: doc5pCWaA.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
+File: docks6M2c.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -509,7 +505,7 @@ Ideas and/or user feedback
      Alan Schmitt, Kevin McCarthy, Halogen3576.
 
 
-File: doc5pCWaA.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docks6M2c.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -991,7 +987,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: doc5pCWaA.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docks6M2c.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -1003,7 +999,7 @@ B Indices
 * Concept index::
 
 
-File: doc5pCWaA.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docks6M2c.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -1025,7 +1021,7 @@ B.1 Function index
                                                                (line  6)
 
 
-File: doc5pCWaA.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docks6M2c.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -1046,12 +1042,12 @@ B.2 Variable index
 * denote-journal-keyword:                Create new journal entry.
                                                                (line  6)
 * denote-journal-signature:              The denote-journal-signature option.
-                                                               (line  8)
+                                                               (line  6)
 * denote-journal-title-format:           Title format of new journal entries.
                                                                (line  6)
 
 
-File: doc5pCWaA.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docks6M2c.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
@@ -1073,21 +1069,21 @@ Node: Manual installation4142
 Node: Sample configuration4943
 Node: Overview5931
 Node: Create new journal entry7167
-Node: Create a new journal entry or use an existing one8502
-Node: Link to a journal entry or create it if missing10592
-Node: Integrate with the calendar to view or create journal entries11507
-Node: The denote-journal-directory option13031
-Node: The denote-journal-signature option13815
-Node: Title format of new journal entries14912
-Node: Create a journal entry using Org capture16675
-Node: The denote-journal-hook17808
-Node: Journaling with a timer18297
-Node: Acknowledgements20689
-Node: GNU Free Documentation License21223
-Node: Indices46584
-Node: Function index46760
-Node: Variable index47906
-Node: Concept index49324
+Node: Create a new journal entry or use an existing one8415
+Node: Link to a journal entry or create it if missing10443
+Node: Integrate with the calendar to view or create journal entries11358
+Node: The denote-journal-directory option12882
+Node: The denote-journal-signature option13666
+Node: Title format of new journal entries14697
+Node: Create a journal entry using Org capture16460
+Node: The denote-journal-hook17593
+Node: Journaling with a timer18082
+Node: Acknowledgements20474
+Node: GNU Free Documentation License21008
+Node: Indices46369
+Node: Function index46545
+Node: Variable index47691
+Node: Concept index49109
 
 End Tag Table
 

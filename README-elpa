@@ -11,11 +11,11 @@ This manual, written by Protesilaos Stavrou, describes the customization
 options for the Emacs package called `denote' (or `denote.el'), and
 provides every other piece of information pertinent to it.
 
-The documentation furnished herein corresponds to stable version 0.1.0,
-released on 2025-04-15.  Any reference to a newer feature which does not
+The documentation furnished herein corresponds to stable version 0.2.0,
+released on 2025-10-17.  Any reference to a newer feature which does not
 yet form part of the latest tagged commit, is explicitly marked as such.
 
-Current development target is 0.2.0-dev.
+Current development target is 0.3.0-dev.
 
 ⁃ Package name (GNU ELPA): `denote-journal'
 ⁃ Official manual: <https://protesilaos.com/emacs/denote-journal>
@@ -175,8 +175,6 @@ Table of Contents
   file-naming scheme). The user can set this keyword to an arbitrary
   string (single word is preferred), a list of strings, a function that
   returns a string or list of strings, or `nil' to not use any keywords.
-  [ The optional function value of `denote-journal-keyword' is part of
-  0.2.0-dev. ]
 
   New journal entries are stored in the `denote-journal-directory',
   while any command that generates a new journal entry calls the
@@ -230,7 +228,7 @@ Table of Contents
   determine when to create a new file or visit an existing one. The
   `denote-journal-interval' can be set to a value of `daily', `weekly',
   `monthly', or `yearly'. Any other value is internall treated as
-  `daily'. [ The `denote-journal-interval' is part of 0.2.0-dev. ]
+  `daily'.
 
 
 [The `denote-journal-signature' option] See section 4.6
@@ -305,8 +303,6 @@ section 4.4
 
 4.6 The `denote-journal-signature' option
 ─────────────────────────────────────────
-
-  [ The `denote-journal-signature' is part of 0.2.0-dev. ]
 
   The user option `denote-journal-signature' specifies a predefined
   signature to use in new journal entries. This is used by
