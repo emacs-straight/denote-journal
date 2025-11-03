@@ -1,4 +1,4 @@
-This is docks6M2c.info, produced by makeinfo version 6.8 from
+This is doctQDVNg.info, produced by makeinfo version 6.8 from
 denote-journal.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docks6M2c.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: doctQDVNg.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -97,7 +97,7 @@ Indices
 
 
 
-File: docks6M2c.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: doctQDVNg.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -108,7 +108,7 @@ File: docks6M2c.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: docks6M2c.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: doctQDVNg.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -127,7 +127,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: docks6M2c.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: doctQDVNg.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -154,7 +154,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: docks6M2c.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+File: doctQDVNg.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -178,7 +178,7 @@ File: docks6M2c.info,  Node: Sample configuration,  Next: Overview,  Prev: Insta
        (setq denote-journal-title-format 'day-date-month-year))
 
 
-File: docks6M2c.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+File: doctQDVNg.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
 
 3 Overview
 **********
@@ -209,7 +209,7 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Journaling with a timer::
 
 
-File: docks6M2c.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: doctQDVNg.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
 3.1 Create new journal entry
 ============================
@@ -236,7 +236,7 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: docks6M2c.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: doctQDVNg.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
 3.2 Create a new journal entry or use an existing one
 =====================================================
@@ -271,7 +271,7 @@ determine when to create a new file or visit an existing one.  The
 ‘daily’.
 
 
-File: docks6M2c.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: doctQDVNg.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
 3.3 Link to a journal entry or create it if missing
 ===================================================
@@ -287,7 +287,7 @@ C-u’), it also produces a link whose description includes just the
 file’s identifier.
 
 
-File: docks6M2c.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: doctQDVNg.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
 3.4 Integrate with the ‘calendar’ to view or create journal entries
 ===================================================================
@@ -316,7 +316,7 @@ aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
 ‘N’ for ‘denote-journal-calendar-new-or-existing’.
 
 
-File: docks6M2c.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+File: doctQDVNg.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
 
 3.5 The ‘denote-journal-directory’ option
 =========================================
@@ -331,7 +331,7 @@ notes.  They can still be retrieved easily by searching for the
 file-naming scheme for searching or filtering”).
 
 
-File: docks6M2c.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
+File: doctQDVNg.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
 
 3.6 The ‘denote-journal-signature’ option
 =========================================
@@ -356,7 +356,7 @@ journal entry should be defined as a new parent sequence.  Thus:
              (denote-sequence-get-new 'parent)))
 
 
-File: docks6M2c.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
+File: doctQDVNg.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
 
 3.7 Title format of new journal entries
 =======================================
@@ -389,7 +389,7 @@ custom string, or a symbol:
      %H:%M"’ will yield a title like ‘Week 14 on 1 April 2025 at 13:48’.
 
 
-File: docks6M2c.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: doctQDVNg.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
 3.8 Create a journal entry using Org capture
 ============================================
@@ -414,7 +414,7 @@ shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: docks6M2c.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: doctQDVNg.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
 3.9 The ‘denote-journal-hook’
 =============================
@@ -425,7 +425,7 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: docks6M2c.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: doctQDVNg.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
 3.10 Journaling with a timer
 ============================
@@ -486,7 +486,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: docks6M2c.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
+File: doctQDVNg.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -505,7 +505,7 @@ Ideas and/or user feedback
      Alan Schmitt, Kevin McCarthy, Halogen3576.
 
 
-File: docks6M2c.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: doctQDVNg.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -987,7 +987,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docks6M2c.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: doctQDVNg.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -999,7 +999,7 @@ B Indices
 * Concept index::
 
 
-File: docks6M2c.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: doctQDVNg.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -1021,7 +1021,7 @@ B.1 Function index
                                                                (line  6)
 
 
-File: docks6M2c.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: doctQDVNg.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -1047,7 +1047,7 @@ B.2 Variable index
                                                                (line  6)
 
 
-File: docks6M2c.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: doctQDVNg.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
