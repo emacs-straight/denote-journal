@@ -5,7 +5,7 @@
 ;; Author: Protesilaos Stavrou <info@protesilaos.com>
 ;; Maintainer: Protesilaos Stavrou <info@protesilaos.com>
 ;; URL: https://github.com/protesilaos/denote-journal
-;; Version: 0.2.1
+;; Version: 0.2.2
 ;; Package-Requires: ((emacs "28.1") (denote "4.0.0"))
 
 ;; This file is NOT part of GNU Emacs.
@@ -96,7 +96,7 @@ journal entry should be defined as a new parent sequence.  Thus:
 
     (setq denote-journal-signature
           (lambda ()
-            (denote-sequence-get-new 'parent)))"
+            (denote-sequence-get-new (quote parent))))"
   :type '(choice
           (const :tag "No predefined signature" nil)
           (string :tag "The predefined signature to use for new entries")
@@ -177,7 +177,7 @@ If the path does not exist, then make it first."
         (when (not (file-directory-p denote-journal-directory))
           (make-directory directory :parents))
         directory)
-    (denote-directory)))
+    (car (denote-directories))))
 
 (defun denote-journal-keyword ()
   "Return the value of the variable `denote-journal-keyword' as a list."
@@ -209,12 +209,12 @@ If the path does not exist, then make it first."
 
 (defun denote-journal-file-is-journal-p (file)
   "Return non-nil if FILE is a journal entry."
-  (and (denote-file-is-note-p file)
+  (and (denote-file-has-denoted-filename-p file)
        (string-match-p (denote-journal--keyword-regex) (file-name-nondirectory file))))
 
 (defun denote-journal-filename-is-journal-p (filename)
   "Return non-nil if FILENAME is a valid name for a journal entry."
-  (and (denote-filename-is-note-p filename)
+  (and (denote-file-has-denoted-filename-p filename)
        (string-match-p (denote-journal--keyword-regex) (file-name-nondirectory filename))))
 
 (defun denote-journal-daily--title-format (&optional date)
@@ -440,10 +440,27 @@ file's title.  This has the same meaning as in `denote-link'."
 (defun denote-journal-calendar--file-to-date (file)
   "Convert FILE to calendar date by interpreting its identifier."
   (when-let* ((identifier (denote-retrieve-filename-identifier file))
-              (date (denote--id-to-date identifier))
+              (date (denote-id-to-date identifier))
               (numbers (mapcar #'string-to-number (split-string date "-"))))
     (pcase-let ((`(,year ,month ,day) numbers))
       (list month day year))))
+
+;; NOTE 2025-11-30: These two are bound by the M-x calendar.  Copying
+;; from the Commentary of calendar.el:
+
+    ;; A note on free variables:
+
+    ;; The calendar passes around a few dynamically bound variables, which
+    ;; unfortunately have rather common names.  They are meant to be
+    ;; available for external functions, so the names can't be changed.
+
+    ;; displayed-month, displayed-year: bound in calendar-generate, the
+    ;;   central month of the 3 month calendar window
+    ;; original-date, number: bound in diary-list-entries, the arguments
+    ;;   with which that function was called.
+    ;; date, entry: bound in diary-list-sexp-entries (qv)
+(defvar displayed-month)
+(defvar displayed-year)
 
 (defun denote-journal-calendar--get-files (calendar-date)
   "Return files around CALENDAR-DATE in variable `denote-journal-directory'."
@@ -470,7 +487,7 @@ file's title.  This has the same meaning as in `denote-link'."
      (format "\\(%1$s.*%2$s\\)\\|\\(%2$s.*%1$s\\)" time-regexp keyword-regexp))))
 
 (defun denote-journal-calendar-mark-dates ()
-  "Mark all visible days in the `calendar' for which there is a Denote journal entry."
+  "Mark visible days in the `calendar' that have a Denote journal entry."
   (interactive)
   (when-let* ((date (calendar-cursor-to-date))
               (files (denote-journal-calendar--get-files date))

@@ -1,4 +1,4 @@
-This is doctQDVNg.info, produced by makeinfo version 6.8 from
+This is docpTDFBb.info, produced by makeinfo version 7.1.1 from
 denote-journal.texi.
 
 Copyright (C) 2022-2025 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doctQDVNg.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docpTDFBb.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -69,7 +69,7 @@ of it.
 * GNU Free Documentation License::
 * Indices::
 
-— The Detailed Node Listing —
+-- The Detailed Node Listing --
 
 Installation
 
@@ -97,7 +97,7 @@ Indices
 
 
 
-File: doctQDVNg.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: docpTDFBb.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -108,7 +108,7 @@ File: doctQDVNg.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: doctQDVNg.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: docpTDFBb.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -127,7 +127,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: doctQDVNg.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: docpTDFBb.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -154,7 +154,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: doctQDVNg.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+File: docpTDFBb.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -178,7 +178,7 @@ File: doctQDVNg.info,  Node: Sample configuration,  Next: Overview,  Prev: Insta
        (setq denote-journal-title-format 'day-date-month-year))
 
 
-File: doctQDVNg.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+File: docpTDFBb.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
 
 3 Overview
 **********
@@ -209,7 +209,7 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Journaling with a timer::
 
 
-File: doctQDVNg.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: docpTDFBb.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
 3.1 Create new journal entry
 ============================
@@ -236,7 +236,7 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: doctQDVNg.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: docpTDFBb.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
 3.2 Create a new journal entry or use an existing one
 =====================================================
@@ -251,7 +251,7 @@ If there are multiple journal entries for the current date,
 using minibuffer completion.  If there is only one matching file, it
 visits it outright.  If there is no journal entry, it creates a new one
 by calling ‘denote-journal-new-entry’ (*note Create new journal
-entry::).  Depending on one’s workflow, this can also be done via
+entry::).  Depending on one's workflow, this can also be done via
 ‘org-capture’ (*note Create a journal entry using Org capture::).
 
    When called with a prefix argument (‘C-u’ with default key bindings),
@@ -271,7 +271,7 @@ determine when to create a new file or visit an existing one.  The
 ‘daily’.
 
 
-File: doctQDVNg.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: docpTDFBb.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
 3.3 Link to a journal entry or create it if missing
 ===================================================
@@ -284,10 +284,10 @@ links to it.  When called with an optional prefix argument (such as
 ‘C-u’ with default key bindings), the command prompts for a date and
 then performs the aforementioned.  With a double prefix argument (‘C-u
 C-u’), it also produces a link whose description includes just the
-file’s identifier.
+file's identifier.
 
 
-File: doctQDVNg.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: docpTDFBb.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
 3.4 Integrate with the ‘calendar’ to view or create journal entries
 ===================================================================
@@ -316,7 +316,7 @@ aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
 ‘N’ for ‘denote-journal-calendar-new-or-existing’.
 
 
-File: doctQDVNg.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+File: docpTDFBb.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
 
 3.5 The ‘denote-journal-directory’ option
 =========================================
@@ -327,11 +327,11 @@ defaults to a subdirectory of ‘denote-directory’ called ‘journal’.
    If ‘denote-journal-directory’ is nil, the ‘denote-directory’ is used.
 Journal entries will thus be in a flat listing together with all other
 notes.  They can still be retrieved easily by searching for the
-‘denote-journal-keyword’ (read the Denote manual about “Features of the
-file-naming scheme for searching or filtering”).
+‘denote-journal-keyword’ (read the Denote manual about "Features of the
+file-naming scheme for searching or filtering").
 
 
-File: doctQDVNg.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
+File: docpTDFBb.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
 
 3.6 The ‘denote-journal-signature’ option
 =========================================
@@ -356,7 +356,7 @@ journal entry should be defined as a new parent sequence.  Thus:
              (denote-sequence-get-new 'parent)))
 
 
-File: doctQDVNg.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
+File: docpTDFBb.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
 
 3.7 Title format of new journal entries
 =======================================
@@ -369,8 +369,8 @@ custom string, or a symbol:
    • When ‘denote-journal-title-format’ is set to a nil value, then new
      journal entries always prompt for a title.  Users will want this if
      they prefer to journal using a given theme for the day rather than
-     the date itself (e.g.  instead of “1st of April 2025” they may
-     prefer something like “Early Spring at the hut”).
+     the date itself (e.g.  instead of "1st of April 2025" they may
+     prefer something like "Early Spring at the hut").
 
    • When ‘denote-journal-title-format’ is set to an empty or blank
      string (string with only spaces), then new journal entries will not
@@ -383,13 +383,13 @@ custom string, or a symbol:
      ‘day-date-month-year-12h’ (e.g.  ‘Tuesday 1 April 2025 02:46 PM’).
 
    • When ‘denote-journal-title-format’ is set to a string, it is used
-     literally except for any “format specifiers”, as interpreted by the
+     literally except for any "format specifiers", as interpreted by the
      function ‘format-time-string’, which are replaced by their given
      date component.  For example, the ‘"Week %V on %A %e %B %Y at
      %H:%M"’ will yield a title like ‘Week 14 on 1 April 2025 at 13:48’.
 
 
-File: doctQDVNg.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: docpTDFBb.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
 3.8 Create a journal entry using Org capture
 ============================================
@@ -409,12 +409,12 @@ or use an existing one::):
 
    Using the above, is the same as calling the command
 ‘denote-journal-new-or-existing-entry’ and then manually appending a
-heading with a timestamp after the file’s front matter.  The template
+heading with a timestamp after the file's front matter.  The template
 shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: doctQDVNg.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: docpTDFBb.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
 3.9 The ‘denote-journal-hook’
 =============================
@@ -425,15 +425,15 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: doctQDVNg.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: docpTDFBb.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
 3.10 Journaling with a timer
 ============================
 
-Sometimes journaling is done with the intent to hone one’s writing
+Sometimes journaling is done with the intent to hone one's writing
 skills.  Perhaps you are learning a new language or wish to communicate
 your ideas with greater clarity and precision.  As with everything that
-requires a degree of sophistication, you have to work for it—write,
+requires a degree of sophistication, you have to work for it--write,
 write, write!
 
    One way to test your progress is to set a timer.  It helps you gauge
@@ -486,7 +486,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: doctQDVNg.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
+File: docpTDFBb.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -505,7 +505,7 @@ Ideas and/or user feedback
      Alan Schmitt, Kevin McCarthy, Halogen3576.
 
 
-File: doctQDVNg.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: docpTDFBb.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -528,7 +528,7 @@ Appendix A GNU Free Documentation License
      author and publisher a way to get credit for their work, while not
      being considered responsible for modifications made by others.
 
-     This License is a kind of “copyleft”, which means that derivative
+     This License is a kind of "copyleft", which means that derivative
      works of the document must themselves be free in the same sense.
      It complements the GNU General Public License, which is a copyleft
      license designed for free software.
@@ -549,18 +549,18 @@ Appendix A GNU Free Documentation License
      be distributed under the terms of this License.  Such a notice
      grants a world-wide, royalty-free license, unlimited in duration,
      to use that work under the conditions stated herein.  The
-     “Document”, below, refers to any such manual or work.  Any member
-     of the public is a licensee, and is addressed as “you”.  You accept
+     "Document", below, refers to any such manual or work.  Any member
+     of the public is a licensee, and is addressed as "you".  You accept
      the license if you copy, modify or distribute the work in a way
      requiring permission under copyright law.
 
-     A “Modified Version” of the Document means any work containing the
+     A "Modified Version" of the Document means any work containing the
      Document or a portion of it, either copied verbatim, or with
      modifications and/or translated into another language.
 
-     A “Secondary Section” is a named appendix or a front-matter section
+     A "Secondary Section" is a named appendix or a front-matter section
      of the Document that deals exclusively with the relationship of the
-     publishers or authors of the Document to the Document’s overall
+     publishers or authors of the Document to the Document's overall
      subject (or to related matters) and contains nothing that could
      fall directly within that overall subject.  (Thus, if the Document
      is in part a textbook of mathematics, a Secondary Section may not
@@ -569,7 +569,7 @@ Appendix A GNU Free Documentation License
      of legal, commercial, philosophical, ethical or political position
      regarding them.
 
-     The “Invariant Sections” are certain Secondary Sections whose
+     The "Invariant Sections" are certain Secondary Sections whose
      titles are designated, as being those of Invariant Sections, in the
      notice that says that the Document is released under this License.
      If a section does not fit the above definition of Secondary then it
@@ -577,13 +577,13 @@ Appendix A GNU Free Documentation License
      contain zero Invariant Sections.  If the Document does not identify
      any Invariant Sections then there are none.
 
-     The “Cover Texts” are certain short passages of text that are
+     The "Cover Texts" are certain short passages of text that are
      listed, as Front-Cover Texts or Back-Cover Texts, in the notice
      that says that the Document is released under this License.  A
      Front-Cover Text may be at most 5 words, and a Back-Cover Text may
      be at most 25 words.
 
-     A “Transparent” copy of the Document means a machine-readable copy,
+     A "Transparent" copy of the Document means a machine-readable copy,
      represented in a format whose specification is available to the
      general public, that is suitable for revising the document
      straightforwardly with generic text editors or (for images composed
@@ -595,7 +595,7 @@ Appendix A GNU Free Documentation License
      been arranged to thwart or discourage subsequent modification by
      readers is not Transparent.  An image format is not Transparent if
      used for any substantial amount of text.  A copy that is not
-     “Transparent” is called “Opaque”.
+     "Transparent" is called "Opaque".
 
      Examples of suitable formats for Transparent copies include plain
      ASCII without markup, Texinfo input format, LaTeX input format,
@@ -608,23 +608,23 @@ Appendix A GNU Free Documentation License
      the machine-generated HTML, PostScript or PDF produced by some word
      processors for output purposes only.
 
-     The “Title Page” means, for a printed book, the title page itself,
+     The "Title Page" means, for a printed book, the title page itself,
      plus such following pages as are needed to hold, legibly, the
      material this License requires to appear in the title page.  For
-     works in formats which do not have any title page as such, “Title
-     Page” means the text near the most prominent appearance of the
-     work’s title, preceding the beginning of the body of the text.
+     works in formats which do not have any title page as such, "Title
+     Page" means the text near the most prominent appearance of the
+     work's title, preceding the beginning of the body of the text.
 
-     The “publisher” means any person or entity that distributes copies
+     The "publisher" means any person or entity that distributes copies
      of the Document to the public.
 
-     A section “Entitled XYZ” means a named subunit of the Document
+     A section "Entitled XYZ" means a named subunit of the Document
      whose title either is precisely XYZ or contains XYZ in parentheses
      following text that translates XYZ in another language.  (Here XYZ
      stands for a specific section name mentioned below, such as
-     “Acknowledgements”, “Dedications”, “Endorsements”, or “History”.)
-     To “Preserve the Title” of such a section when you modify the
-     Document means that it remains a section “Entitled XYZ” according
+     "Acknowledgements", "Dedications", "Endorsements", or "History".)
+     To "Preserve the Title" of such a section when you modify the
+     Document means that it remains a section "Entitled XYZ" according
      to this definition.
 
      The Document may include Warranty Disclaimers next to the notice
@@ -654,7 +654,7 @@ Appendix A GNU Free Documentation License
 
      If you publish printed copies (or copies in media that commonly
      have printed covers) of the Document, numbering more than 100, and
-     the Document’s license notice requires Cover Texts, you must
+     the Document's license notice requires Cover Texts, you must
      enclose the copies in covers that carry, clearly and legibly, all
      these Cover Texts: Front-Cover Texts on the front cover, and
      Back-Cover Texts on the back cover.  Both covers must also clearly
@@ -726,15 +726,15 @@ Appendix A GNU Free Documentation License
           the Addendum below.
 
        G. Preserve in that license notice the full lists of Invariant
-          Sections and required Cover Texts given in the Document’s
+          Sections and required Cover Texts given in the Document's
           license notice.
 
        H. Include an unaltered copy of this License.
 
-       I. Preserve the section Entitled “History”, Preserve its Title,
+       I. Preserve the section Entitled "History", Preserve its Title,
           and add to it an item stating at least the title, year, new
           authors, and publisher of the Modified Version as given on the
-          Title Page.  If there is no section Entitled “History” in the
+          Title Page.  If there is no section Entitled "History" in the
           Document, create one stating the title, year, authors, and
           publisher of the Document as given on its Title Page, then add
           an item describing the Modified Version as stated in the
@@ -744,12 +744,12 @@ Appendix A GNU Free Documentation License
           for public access to a Transparent copy of the Document, and
           likewise the network locations given in the Document for
           previous versions it was based on.  These may be placed in the
-          “History” section.  You may omit a network location for a work
+          "History" section.  You may omit a network location for a work
           that was published at least four years before the Document
           itself, or if the original publisher of the version it refers
           to gives permission.
 
-       K. For any section Entitled “Acknowledgements” or “Dedications”,
+       K. For any section Entitled "Acknowledgements" or "Dedications",
           Preserve the Title of the section, and preserve in the section
           all the substance and tone of each of the contributor
           acknowledgements and/or dedications given therein.
@@ -758,11 +758,11 @@ Appendix A GNU Free Documentation License
           in their text and in their titles.  Section numbers or the
           equivalent are not considered part of the section titles.
 
-       M. Delete any section Entitled “Endorsements”.  Such a section
+       M. Delete any section Entitled "Endorsements".  Such a section
           may not be included in the Modified Version.
 
        N. Do not retitle any existing section to be Entitled
-          “Endorsements” or to conflict in title with any Invariant
+          "Endorsements" or to conflict in title with any Invariant
           Section.
 
        O. Preserve any Warranty Disclaimers.
@@ -771,15 +771,15 @@ Appendix A GNU Free Documentation License
      appendices that qualify as Secondary Sections and contain no
      material copied from the Document, you may at your option designate
      some or all of these sections as invariant.  To do this, add their
-     titles to the list of Invariant Sections in the Modified Version’s
+     titles to the list of Invariant Sections in the Modified Version's
      license notice.  These titles must be distinct from any other
      section titles.
 
-     You may add a section Entitled “Endorsements”, provided it contains
+     You may add a section Entitled "Endorsements", provided it contains
      nothing but endorsements of your Modified Version by various
-     parties—for example, statements of peer review or that the text has
-     been approved by an organization as the authoritative definition of
-     a standard.
+     parties--for example, statements of peer review or that the text
+     has been approved by an organization as the authoritative
+     definition of a standard.
 
      You may add a passage of up to five words as a Front-Cover Text,
      and a passage of up to 25 words as a Back-Cover Text, to the end of
@@ -817,10 +817,10 @@ Appendix A GNU Free Documentation License
      combined work.
 
      In the combination, you must combine any sections Entitled
-     “History” in the various original documents, forming one section
-     Entitled “History”; likewise combine any sections Entitled
-     “Acknowledgements”, and any sections Entitled “Dedications”.  You
-     must delete all sections Entitled “Endorsements.”
+     "History" in the various original documents, forming one section
+     Entitled "History"; likewise combine any sections Entitled
+     "Acknowledgements", and any sections Entitled "Dedications".  You
+     must delete all sections Entitled "Endorsements."
 
   6. COLLECTIONS OF DOCUMENTS
 
@@ -841,16 +841,16 @@ Appendix A GNU Free Documentation License
 
      A compilation of the Document or its derivatives with other
      separate and independent documents or works, in or on a volume of a
-     storage or distribution medium, is called an “aggregate” if the
+     storage or distribution medium, is called an "aggregate" if the
      copyright resulting from the compilation is not used to limit the
-     legal rights of the compilation’s users beyond what the individual
+     legal rights of the compilation's users beyond what the individual
      works permit.  When the Document is included in an aggregate, this
      License does not apply to the other works in the aggregate which
      are not themselves derivative works of the Document.
 
      If the Cover Text requirement of section 3 is applicable to these
      copies of the Document, then if the Document is less than one half
-     of the entire aggregate, the Document’s Cover Texts may be placed
+     of the entire aggregate, the Document's Cover Texts may be placed
      on covers that bracket the Document within the aggregate, or the
      electronic equivalent of covers if the Document is in electronic
      form.  Otherwise they must appear on printed covers that bracket
@@ -872,8 +872,8 @@ Appendix A GNU Free Documentation License
      this License or a notice or disclaimer, the original version will
      prevail.
 
-     If a section in the Document is Entitled “Acknowledgements”,
-     “Dedications”, or “History”, the requirement (section 4) to
+     If a section in the Document is Entitled "Acknowledgements",
+     "Dedications", or "History", the requirement (section 4) to
      Preserve its Title (section 1) will typically require changing the
      actual title.
 
@@ -914,7 +914,7 @@ Appendix A GNU Free Documentation License
 
      Each version of the License is given a distinguishing version
      number.  If the Document specifies that a particular numbered
-     version of this License “or any later version” applies to it, you
+     version of this License "or any later version" applies to it, you
      have the option of following the terms and conditions either of
      that specified version or of any later version that has been
      published (not as a draft) by the Free Software Foundation.  If the
@@ -922,29 +922,29 @@ Appendix A GNU Free Documentation License
      choose any version ever published (not as a draft) by the Free
      Software Foundation.  If the Document specifies that a proxy can
      decide which future versions of this License can be used, that
-     proxy’s public statement of acceptance of a version permanently
+     proxy's public statement of acceptance of a version permanently
      authorizes you to choose that version for the Document.
 
   11. RELICENSING
 
-     “Massive Multiauthor Collaboration Site” (or “MMC Site”) means any
+     "Massive Multiauthor Collaboration Site" (or "MMC Site") means any
      World Wide Web server that publishes copyrightable works and also
      provides prominent facilities for anybody to edit those works.  A
      public wiki that anybody can edit is an example of such a server.
-     A “Massive Multiauthor Collaboration” (or “MMC”) contained in the
+     A "Massive Multiauthor Collaboration" (or "MMC") contained in the
      site means any set of copyrightable works thus published on the MMC
      site.
 
-     “CC-BY-SA” means the Creative Commons Attribution-Share Alike 3.0
+     "CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
      license published by Creative Commons Corporation, a not-for-profit
      corporation with a principal place of business in San Francisco,
      California, as well as future copyleft versions of that license
      published by that same organization.
 
-     “Incorporate” means to publish or republish a Document, in whole or
+     "Incorporate" means to publish or republish a Document, in whole or
      in part, as part of another Document.
 
-     An MMC is “eligible for relicensing” if it is licensed under this
+     An MMC is "eligible for relicensing" if it is licensed under this
      License, and if all works that were first published under this
      License somewhere other than this MMC, and subsequently
      incorporated in whole or in part into the MMC, (1) had no cover
@@ -971,7 +971,7 @@ notices just after the title page:
        Free Documentation License''.
 
    If you have Invariant Sections, Front-Cover Texts and Back-Cover
-Texts, replace the “with...Texts.” line with this:
+Texts, replace the "with...Texts." line with this:
 
          with the Invariant Sections being LIST THEIR TITLES, with
          the Front-Cover Texts being LIST, and with the Back-Cover Texts
@@ -987,7 +987,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: doctQDVNg.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: docpTDFBb.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -999,7 +999,7 @@ B Indices
 * Concept index::
 
 
-File: doctQDVNg.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: docpTDFBb.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -1021,7 +1021,7 @@ B.1 Function index
                                                                (line  6)
 
 
-File: doctQDVNg.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: docpTDFBb.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -1047,7 +1047,7 @@ B.2 Variable index
                                                                (line  6)
 
 
-File: doctQDVNg.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: docpTDFBb.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
@@ -1062,7 +1062,7 @@ B.3 Concept index
 
 
 Tag Table:
-Node: Top882
+Node: Top884
 Node: Installation3391
 Node: GNU ELPA package3573
 Node: Manual installation4142
@@ -1070,20 +1070,20 @@ Node: Sample configuration4943
 Node: Overview5931
 Node: Create new journal entry7167
 Node: Create a new journal entry or use an existing one8415
-Node: Link to a journal entry or create it if missing10443
-Node: Integrate with the calendar to view or create journal entries11358
-Node: The denote-journal-directory option12882
-Node: The denote-journal-signature option13666
-Node: Title format of new journal entries14697
-Node: Create a journal entry using Org capture16460
-Node: The denote-journal-hook17593
-Node: Journaling with a timer18082
-Node: Acknowledgements20474
-Node: GNU Free Documentation License21008
-Node: Indices46369
-Node: Function index46545
-Node: Variable index47691
-Node: Concept index49109
+Node: Link to a journal entry or create it if missing10441
+Node: Integrate with the calendar to view or create journal entries11354
+Node: The denote-journal-directory option12878
+Node: The denote-journal-signature option13658
+Node: Title format of new journal entries14689
+Node: Create a journal entry using Org capture16440
+Node: The denote-journal-hook17571
+Node: Journaling with a timer18060
+Node: Acknowledgements20449
+Node: GNU Free Documentation License20983
+Node: Indices46143
+Node: Function index46319
+Node: Variable index47465
+Node: Concept index48883
 
 End Tag Table
 
