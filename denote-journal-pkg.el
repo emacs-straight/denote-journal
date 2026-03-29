@@ -1,2 +1,2 @@
-;; Generated package description from denote-journal.el  -*- mode: lisp-data; no-byte-compile: t -*-
-(define-package "denote-journal" "0.2.2.0.20260111.93423" "Convenience functions for daily journaling with Denote" '((emacs "28.1") (denote "4.0.0")) :commit "b334ef099cee803f02534b5f0db95337e4ca46c8" :authors '(("Protesilaos Stavrou" . "info@protesilaos.com")) :maintainer '("Protesilaos Stavrou" . "info@protesilaos.com") :url "https://github.com/protesilaos/denote-journal")
+;; Generated package description from denote-journal.el  -*- mode: lisp-data; no-byte-compile: t; lexical-binding:t -*-
+(define-package "denote-journal" "0.2.2.0.20260328.192346" "Convenience functions for daily journaling with Denote" '((emacs "28.1") (denote "4.0.0")) :commit "d4cc501e3a2fce5a093d111285fff09deb0ebd21" :authors '(("Protesilaos Stavrou" . "info@protesilaos.com")) :maintainer '("Protesilaos Stavrou" . "info@protesilaos.com") :url "https://github.com/protesilaos/denote-journal")

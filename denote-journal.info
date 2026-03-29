@@ -1,4 +1,4 @@
-This is doczxsRIl.info, produced by makeinfo version 7.1.1 from
+This is denote-journal.info, produced by makeinfo version 7.2 from
 denote-journal.texi.
 
 Copyright (C) 2023-2026 Free Software Foundation, Inc.
@@ -20,7 +20,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doczxsRIl.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: denote-journal.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 denote-journal: Convenience functions for daily journaling with Denote
 **********************************************************************
@@ -95,9 +95,8 @@ Indices
 * Variable index::
 * Concept index::
 
-
 
-File: doczxsRIl.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
+File: denote-journal.info,  Node: Installation,  Next: Sample configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -108,7 +107,7 @@ File: doczxsRIl.info,  Node: Installation,  Next: Sample configuration,  Prev: T
 * Manual installation::
 
 
-File: doczxsRIl.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
+File: denote-journal.info,  Node: GNU ELPA package,  Next: Manual installation,  Up: Installation
 
 1.1 GNU ELPA package
 ====================
@@ -127,7 +126,7 @@ archive.  Read:
 <https://protesilaos.com/codelog/2022-05-13-emacs-elpa-devel/>.
 
 
-File: doczxsRIl.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
+File: denote-journal.info,  Node: Manual installation,  Prev: GNU ELPA package,  Up: Installation
 
 1.2 Manual installation
 =======================
@@ -154,7 +153,7 @@ following commands in a shell prompt:
    Everything is in place to set up the package.
 
 
-File: doczxsRIl.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
+File: denote-journal.info,  Node: Sample configuration,  Next: Overview,  Prev: Installation,  Up: Top
 
 2 Sample configuration
 **********************
@@ -178,7 +177,7 @@ File: doczxsRIl.info,  Node: Sample configuration,  Next: Overview,  Prev: Insta
        (setq denote-journal-title-format 'day-date-month-year))
 
 
-File: doczxsRIl.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
+File: denote-journal.info,  Node: Overview,  Next: Acknowledgements,  Prev: Sample configuration,  Up: Top
 
 3 Overview
 **********
@@ -209,7 +208,7 @@ by replacing all instances of ‘denote-journal-extras’ with
 * Journaling with a timer::
 
 
-File: doczxsRIl.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
+File: denote-journal.info,  Node: Create new journal entry,  Next: Create a new journal entry or use an existing one,  Up: Overview
 
 3.1 Create new journal entry
 ============================
@@ -236,7 +235,7 @@ per day should use ‘denote-journal-new-or-existing-entry’ instead (*note
 Create a new journal entry or use an existing one::).
 
 
-File: doczxsRIl.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
+File: denote-journal.info,  Node: Create a new journal entry or use an existing one,  Next: Link to a journal entry or create it if missing,  Prev: Create new journal entry,  Up: Overview
 
 3.2 Create a new journal entry or use an existing one
 =====================================================
@@ -271,7 +270,7 @@ determine when to create a new file or visit an existing one.  The
 ‘daily’.
 
 
-File: doczxsRIl.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
+File: denote-journal.info,  Node: Link to a journal entry or create it if missing,  Next: Integrate with the calendar to view or create journal entries,  Prev: Create a new journal entry or use an existing one,  Up: Overview
 
 3.3 Link to a journal entry or create it if missing
 ===================================================
@@ -287,7 +286,7 @@ C-u’), it also produces a link whose description includes just the
 file's identifier.
 
 
-File: doczxsRIl.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
+File: denote-journal.info,  Node: Integrate with the calendar to view or create journal entries,  Next: The denote-journal-directory option,  Prev: Link to a journal entry or create it if missing,  Up: Overview
 
 3.4 Integrate with the ‘calendar’ to view or create journal entries
 ===================================================================
@@ -316,7 +315,7 @@ aforementioned commands: ‘F’ for ‘denote-journal-calendar-find-file’ and
 ‘N’ for ‘denote-journal-calendar-new-or-existing’.
 
 
-File: doczxsRIl.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
+File: denote-journal.info,  Node: The denote-journal-directory option,  Next: The denote-journal-signature option,  Prev: Integrate with the calendar to view or create journal entries,  Up: Overview
 
 3.5 The ‘denote-journal-directory’ option
 =========================================
@@ -331,7 +330,7 @@ notes.  They can still be retrieved easily by searching for the
 file-naming scheme for searching or filtering").
 
 
-File: doczxsRIl.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
+File: denote-journal.info,  Node: The denote-journal-signature option,  Next: Title format of new journal entries,  Prev: The denote-journal-directory option,  Up: Overview
 
 3.6 The ‘denote-journal-signature’ option
 =========================================
@@ -356,7 +355,7 @@ journal entry should be defined as a new parent sequence.  Thus:
              (denote-sequence-get-new 'parent)))
 
 
-File: doczxsRIl.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
+File: denote-journal.info,  Node: Title format of new journal entries,  Next: Create a journal entry using Org capture,  Prev: The denote-journal-signature option,  Up: Overview
 
 3.7 Title format of new journal entries
 =======================================
@@ -389,7 +388,7 @@ custom string, or a symbol:
      %H:%M"’ will yield a title like ‘Week 14 on 1 April 2025 at 13:48’.
 
 
-File: doczxsRIl.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
+File: denote-journal.info,  Node: Create a journal entry using Org capture,  Next: The denote-journal-hook,  Prev: Title format of new journal entries,  Up: Overview
 
 3.8 Create a journal entry using Org capture
 ============================================
@@ -414,7 +413,7 @@ shown above can be modified accordingly, in accordance with the
 documentation of ‘org-capture-templates’.
 
 
-File: doczxsRIl.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
+File: denote-journal.info,  Node: The denote-journal-hook,  Next: Journaling with a timer,  Prev: Create a journal entry using Org capture,  Up: Overview
 
 3.9 The ‘denote-journal-hook’
 =============================
@@ -425,7 +424,7 @@ produce consequences therefrom, such as to set a timer with the ‘tmr’
 package from GNU ELPA (*note Journaling with a timer::).
 
 
-File: doczxsRIl.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
+File: denote-journal.info,  Node: Journaling with a timer,  Prev: The denote-journal-hook,  Up: Overview
 
 3.10 Journaling with a timer
 ============================
@@ -486,7 +485,7 @@ Practice makes perfect!
    • Backronym: TMR May Ring; Timer Must Run.
 
 
-File: doczxsRIl.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
+File: denote-journal.info,  Node: Acknowledgements,  Next: GNU Free Documentation License,  Prev: Overview,  Up: Top
 
 4 Acknowledgements
 ******************
@@ -499,13 +498,14 @@ Author/maintainer
 
 Contributions to code or the manual
      Abdelhak Bougouffa, Alan Schmitt, Ettore Berardi, Honza Pokorny,
-     Josh Kingsley, Stefan Monnier, Vineet C.  Kulkarni, gk2803, jbwfu.
+     Josh Kingsley, Stefan Monnier, Vineet C.  Kulkarni, gk2803, jbwfu,
+     nescias.
 
 Ideas and/or user feedback
      Alan Schmitt, Kevin McCarthy, Halogen3576.
 
 
-File: doczxsRIl.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
+File: denote-journal.info,  Node: GNU Free Documentation License,  Next: Indices,  Prev: Acknowledgements,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -987,7 +987,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: doczxsRIl.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
+File: denote-journal.info,  Node: Indices,  Prev: GNU Free Documentation License,  Up: Top
 
 B Indices
 *********
@@ -999,7 +999,7 @@ B Indices
 * Concept index::
 
 
-File: doczxsRIl.info,  Node: Function index,  Next: Variable index,  Up: Indices
+File: denote-journal.info,  Node: Function index,  Next: Variable index,  Up: Indices
 
 B.1 Function index
 ==================
@@ -1021,7 +1021,7 @@ B.1 Function index
                                                                (line  6)
 
 
-File: doczxsRIl.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
+File: denote-journal.info,  Node: Variable index,  Next: Concept index,  Prev: Function index,  Up: Indices
 
 B.2 Variable index
 ==================
@@ -1047,7 +1047,7 @@ B.2 Variable index
                                                                (line  6)
 
 
-File: doczxsRIl.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
+File: denote-journal.info,  Node: Concept index,  Prev: Variable index,  Up: Indices
 
 B.3 Concept index
 =================
@@ -1059,35 +1059,35 @@ B.3 Concept index
 * Installation instructions:             Installation.          (line 6)
 * Package configuration:                 Sample configuration.  (line 6)
 
-
 
 Tag Table:
-Node: Top884
-Node: Installation3391
-Node: GNU ELPA package3573
-Node: Manual installation4142
-Node: Sample configuration4943
-Node: Overview5931
-Node: Create new journal entry7167
-Node: Create a new journal entry or use an existing one8415
-Node: Link to a journal entry or create it if missing10441
-Node: Integrate with the calendar to view or create journal entries11354
-Node: The denote-journal-directory option12878
-Node: The denote-journal-signature option13658
-Node: Title format of new journal entries14689
-Node: Create a journal entry using Org capture16440
-Node: The denote-journal-hook17571
-Node: Journaling with a timer18060
-Node: Acknowledgements20449
-Node: GNU Free Documentation License20983
-Node: Indices46143
-Node: Function index46319
-Node: Variable index47465
-Node: Concept index48883
+Node: Top887
+Node: Installation3398
+Node: GNU ELPA package3585
+Node: Manual installation4159
+Node: Sample configuration4965
+Node: Overview5958
+Node: Create new journal entry7199
+Node: Create a new journal entry or use an existing one8452
+Node: Link to a journal entry or create it if missing10483
+Node: Integrate with the calendar to view or create journal entries11401
+Node: The denote-journal-directory option12930
+Node: The denote-journal-signature option13715
+Node: Title format of new journal entries14751
+Node: Create a journal entry using Org capture16507
+Node: The denote-journal-hook17643
+Node: Journaling with a timer18137
+Node: Acknowledgements20531
+Node: GNU Free Documentation License21084
+Node: Indices46249
+Node: Function index46430
+Node: Variable index47581
+Node: Concept index49004
 
 End Tag Table
 
 
 Local Variables:
 coding: utf-8
+Info-documentlanguage: en
 End:
