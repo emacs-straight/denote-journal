@@ -38,10 +38,9 @@ Copyright (C) 2023-2026 Free Software Foundation, Inc.
      (a) The FSF’s Back-Cover Text is: “You have the freedom to copy and
      modify this GNU manual.”
 
-   This manual, written by Protesilaos Stavrou, describes the
-customization options for the Emacs package called ‘denote’ (or
-‘denote.el’), and provides every other piece of information pertinent to
-it.
+   This manual, written by Protesilaos, describes the customization
+options for the Emacs package called ‘denote’ (or ‘denote.el’), and
+provides every other piece of information pertinent to it.
 
    The documentation furnished herein corresponds to stable version
 0.2.0, released on 2025-10-17.  Any reference to a newer feature which
@@ -494,7 +493,7 @@ Denote Journal is meant to be a collective effort.  Every bit of help
 matters.
 
 Author/maintainer
-     Protesilaos Stavrou.
+     Protesilaos.
 
 Contributions to code or the manual
      Abdelhak Bougouffa, Alan Schmitt, Ettore Berardi, Honza Pokorny,
@@ -1062,27 +1061,27 @@ B.3 Concept index
 
 Tag Table:
 Node: Top887
-Node: Installation3398
-Node: GNU ELPA package3585
-Node: Manual installation4159
-Node: Sample configuration4965
-Node: Overview5958
-Node: Create new journal entry7199
-Node: Create a new journal entry or use an existing one8452
-Node: Link to a journal entry or create it if missing10483
-Node: Integrate with the calendar to view or create journal entries11401
-Node: The denote-journal-directory option12930
-Node: The denote-journal-signature option13715
-Node: Title format of new journal entries14751
-Node: Create a journal entry using Org capture16507
-Node: The denote-journal-hook17643
-Node: Journaling with a timer18137
-Node: Acknowledgements20531
-Node: GNU Free Documentation License21084
-Node: Indices46249
-Node: Function index46430
-Node: Variable index47581
-Node: Concept index49004
+Node: Installation3390
+Node: GNU ELPA package3577
+Node: Manual installation4151
+Node: Sample configuration4957
+Node: Overview5950
+Node: Create new journal entry7191
+Node: Create a new journal entry or use an existing one8444
+Node: Link to a journal entry or create it if missing10475
+Node: Integrate with the calendar to view or create journal entries11393
+Node: The denote-journal-directory option12922
+Node: The denote-journal-signature option13707
+Node: Title format of new journal entries14743
+Node: Create a journal entry using Org capture16499
+Node: The denote-journal-hook17635
+Node: Journaling with a timer18129
+Node: Acknowledgements20523
+Node: GNU Free Documentation License21068
+Node: Indices46233
+Node: Function index46414
+Node: Variable index47565
+Node: Concept index48988
 
 End Tag Table
 
