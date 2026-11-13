@@ -498,8 +498,8 @@ Author/maintainer
 
 Contributions to code or the manual
      Abdelhak Bougouffa, Alan Schmitt, Ettore Berardi, Honza Pokorny,
-     Josh Kingsley, Stefan Monnier, Vineet C.  Kulkarni, gk2803, jbwfu,
-     nescias.
+     Josh Kingsley, Stefan Monnier, Vineet C.  Kulkarni, andsy10,
+     gk2803, jbwfu, nescias.
 
 Ideas and/or user feedback
      Alan Schmitt, Kevin McCarthy, Halogen3576.
@@ -1079,11 +1079,11 @@ Node: Create a journal entry using Org capture16502
 Node: The denote-journal-hook17638
 Node: Journaling with a timer18132
 Node: Acknowledgements20526
-Node: GNU Free Documentation License21071
-Node: Indices46236
-Node: Function index46417
-Node: Variable index47568
-Node: Concept index48991
+Node: GNU Free Documentation License21080
+Node: Indices46245
+Node: Function index46426
+Node: Variable index47577
+Node: Concept index49000
 
 End Tag Table
 
